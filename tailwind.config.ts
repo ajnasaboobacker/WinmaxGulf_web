@@ -47,6 +47,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        winmax: {
+          orange: "hsl(var(--winmax-orange))",
+          "orange-light": "hsl(var(--winmax-orange-light))",
+          dark: "hsl(var(--winmax-dark))",
+          gray: "hsl(var(--winmax-gray))",
+        },
         tech: {
           blue: "hsl(var(--tech-blue))",
           purple: "hsl(var(--tech-purple))",

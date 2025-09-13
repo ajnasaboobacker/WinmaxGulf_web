@@ -36,19 +36,25 @@ All colors MUST be HSL.
     --input: 240 3.7% 15.9%;
     --ring: 240 100% 90%;
 
-    /* Tech-inspired color palette */
+    /* Winmax Gulf brand color palette */
+    --winmax-orange: 25 95% 53%;
+    --winmax-orange-light: 35 95% 65%;
+    --winmax-dark: 220 15% 15%;
+    --winmax-gray: 210 10% 45%;
+    
+    /* Tech-inspired accent colors */
     --tech-blue: 217 91% 60%;
     --tech-purple: 262 83% 58%;
     --tech-cyan: 189 85% 60%;
     --tech-orange: 25 95% 53%;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
-    --gradient-accent: linear-gradient(90deg, hsl(189 85% 60%), hsl(217 91% 60%));
+    /* Gradients using brand colors */
+    --gradient-hero: linear-gradient(135deg, hsl(25 95% 53%), hsl(35 95% 65%));
+    --gradient-accent: linear-gradient(90deg, hsl(25 95% 53%), hsl(220 15% 15%));
     --gradient-card: linear-gradient(145deg, hsl(240 3.7% 15.9%), hsl(240 10% 3.9%));
     
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+    /* Shadows using brand colors */
+    --shadow-glow: 0 0 40px hsl(25 95% 53% / 0.3);
     --shadow-card: 0 8px 32px hsl(240 10% 3.9% / 0.3);
 
     --radius: 0.5rem;
