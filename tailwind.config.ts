@@ -106,6 +106,12 @@ export default {
         "hover-lift": "hover-lift 0.3s ease-out",
         "shimmer": "shimmer 2s linear infinite",
         "rotate-slow": "rotate-slow 10s linear infinite",
+        "morph": "morph 4s ease-in-out infinite",
+        "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        "tilt-3d": "tilt-3d 6s ease-in-out infinite",
+        "scroll-parallax": "scroll-parallax 20s linear infinite",
+        "elastic-bounce": "elastic-bounce 0.6s ease-out",
+        "wiggle": "wiggle 1s ease-in-out infinite",
       },
       keyframes: {
         ...{
@@ -157,6 +163,39 @@ export default {
         "rotate-slow": {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
+        },
+        "morph": {
+          "0%, 100%": { transform: "scale(1) rotate(0deg)", borderRadius: "20%" },
+          "50%": { transform: "scale(1.1) rotate(180deg)", borderRadius: "50%" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { 
+            boxShadow: "0 0 20px hsl(var(--winmax-orange) / 0.3)",
+            filter: "brightness(1)"
+          },
+          "50%": { 
+            boxShadow: "0 0 40px hsl(var(--winmax-orange) / 0.8), 0 0 60px hsl(var(--winmax-orange) / 0.5)",
+            filter: "brightness(1.2)"
+          },
+        },
+        "tilt-3d": {
+          "0%": { transform: "perspective(1000px) rotateX(0deg) rotateY(0deg)" },
+          "50%": { transform: "perspective(1000px) rotateX(-10deg) rotateY(10deg)" },
+          "100%": { transform: "perspective(1000px) rotateX(0deg) rotateY(0deg)" },
+        },
+        "scroll-parallax": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-50px)" },
+        },
+        "elastic-bounce": {
+          "0%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.3)" },
+          "75%": { transform: "scale(0.9)" },
+          "100%": { transform: "scale(1)" },
+        },
+        "wiggle": {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
         },
       },
     },

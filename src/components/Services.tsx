@@ -4,6 +4,9 @@ import { ArrowRight, Eye, Monitor, Music } from "lucide-react";
 import pdlcBanner from "@/assets/pdlc-banner.jpg";
 import ledBanner from "@/assets/led-banner.jpg";
 import djBanner from "@/assets/dj-banner.jpg";
+import ScrollAnimation from "./ScrollAnimations";
+import AnimatedIcon from "./AnimatedIcon";
+import { InteractiveCard, MicroInteractionButton } from "./Microinteractions";
 
 const Services = () => {
   const services = [
@@ -37,7 +40,7 @@ const Services = () => {
     <section id="services" className="py-20 bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollAnimation animation="fadeIn" className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-winmax-orange/20 to-winmax-orange-light/20 border border-winmax-orange/30 mb-6">
             <span className="text-sm font-medium text-winmax-orange">Our Services</span>
           </div>
@@ -48,16 +51,20 @@ const Services = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We deliver complete product and project services, covering design, project assistance, training, ongoing maintenance, and expert technical support to ensure customer success.
           </p>
-        </div>
+        </ScrollAnimation>
 
         {/* Services Grid */}
         <div className="grid lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="group hover:scale-105 transition-all duration-300 bg-gradient-to-br from-card to-secondary/10 border-border/50 hover:border-winmax-orange/50 overflow-hidden animate-slide-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
+            <ScrollAnimation 
+              key={index}
+              animation="slideUp"
+              delay={index * 200}
             >
+              <InteractiveCard 
+                hoverEffect="tilt"
+                className="bg-gradient-to-br from-card to-secondary/10 border-border/50 hover:border-winmax-orange/50 overflow-hidden"
+              >
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src={service.image}
@@ -65,8 +72,13 @@ const Services = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-                <div className="absolute top-4 left-4 p-3 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-lg text-white">
-                  {service.icon}
+                <div className="absolute top-4 left-4">
+                  <AnimatedIcon 
+                    icon={service.icon as any}
+                    className="p-3 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-lg text-white"
+                    hoverEffect="glow"
+                    delay={index * 100}
+                  />
                 </div>
               </div>
               
@@ -87,15 +99,16 @@ const Services = () => {
                   ))}
                 </div>
 
-                <Button 
-                  className="w-full bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 transition-opacity group"
+                <MicroInteractionButton 
+                  className="w-full bg-gradient-to-r from-winmax-orange to-winmax-orange-light"
                   onClick={() => window.open(service.link, '_blank')}
                 >
                   Enquire Now
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                </MicroInteractionButton>
               </CardContent>
-            </Card>
+              </InteractiveCard>
+            </ScrollAnimation>
           ))}
         </div>
 

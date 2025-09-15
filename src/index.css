@@ -64,6 +64,15 @@ All colors MUST be HSL.
     /* Animation variables */
     --bounce-height: -10px;
     --scale-hover: 1.05;
+    
+    /* 3D transforms */
+    --perspective: 1000px;
+    --rotate-x: -15deg;
+    --rotate-y: 15deg;
+    
+    /* Scrolling effects */
+    --parallax-speed: 0.5;
+    --scroll-offset: 100px;
 
     --radius: 0.5rem;
 

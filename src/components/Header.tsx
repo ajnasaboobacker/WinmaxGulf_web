@@ -1,18 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import AnimatedIcon from "./AnimatedIcon";
+import { MicroInteractionButton } from "./Microinteractions";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border/50 shadow-lg transition-all duration-300">
+    <header className={`
+      fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out
+      ${isScrolled 
+        ? 'bg-background/95 backdrop-blur-lg border-b border-border/50 shadow-xl py-2' 
+        : 'bg-background/80 backdrop-blur-sm border-b border-transparent py-4'
+      }
+    `}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">W</span>
+            <div className="w-8 h-8 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-lg flex items-center justify-center animate-glow-pulse">
+              <span className="text-white font-bold text-sm animate-wiggle">W</span>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-winmax-orange to-winmax-orange-light bg-clip-text text-transparent">
               Winmax Gulf
@@ -45,13 +60,13 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button 
-              className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:scale-105 hover:shadow-lg transition-all duration-300 group"
+            <MicroInteractionButton 
+              className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:shadow-xl"
               onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank')}
             >
               Get Quote
               <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-            </Button>
+            </MicroInteractionButton>
           </div>
 
           {/* Mobile Menu Button */}

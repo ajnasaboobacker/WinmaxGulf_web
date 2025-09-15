@@ -9,6 +9,7 @@ import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CharacterAnimations from "@/components/CharacterAnimations";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <CharacterAnimations />
     </div>
   );
 };
