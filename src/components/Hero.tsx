@@ -15,9 +15,11 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/20"></div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 right-20 w-20 h-20 bg-winmax-orange/20 rounded-full animate-float hidden lg:block"></div>
-      <div className="absolute bottom-40 right-40 w-12 h-12 bg-winmax-orange-light/20 rounded-full animate-float [animation-delay:2s] hidden lg:block"></div>
+      {/* Interactive Floating Elements */}
+      <div className="absolute top-20 right-20 w-20 h-20 bg-gradient-to-r from-winmax-orange/30 to-winmax-orange-light/30 rounded-full animate-float shadow-lg hidden lg:block"></div>
+      <div className="absolute bottom-40 right-40 w-12 h-12 bg-gradient-to-r from-tech-blue/30 to-tech-purple/30 rounded-full animate-float [animation-delay:2s] shadow-lg hidden lg:block"></div>
+      <div className="absolute top-1/2 right-10 w-8 h-8 bg-tech-cyan/40 rounded-full animate-bounce-gentle [animation-delay:1s] hidden lg:block"></div>
+      <div className="absolute top-40 left-20 w-16 h-16 bg-winmax-orange/20 rounded-full animate-pulse hidden lg:block"></div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-3xl animate-fade-in">
@@ -38,22 +40,22 @@ const Hero = () => {
             Enhance privacy, visual communication, and create immersive experiences.
           </p>
 
-          {/* CTA Buttons */}
+          {/* Interactive CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 transition-all duration-300 group"
+              className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:scale-105 hover:shadow-xl transition-all duration-300 group shadow-lg"
               onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank')}
             >
               Get Started Today
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-winmax-orange text-winmax-orange hover:bg-winmax-orange/10 transition-colors group"
+              className="border-2 border-winmax-orange text-winmax-orange hover:bg-winmax-orange hover:text-white hover:scale-105 hover:shadow-lg transition-all duration-300 group"
             >
-              <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+              <Play className="mr-2 h-5 w-5 group-hover:scale-125 transition-transform duration-300" />
               Watch Demo
             </Button>
           </div>
