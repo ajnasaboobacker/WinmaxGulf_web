@@ -11,7 +11,7 @@ import { InteractiveCard, MicroInteractionButton } from "./Microinteractions";
 const Services = () => {
   const services = [
     {
-      icon: <Eye className="h-8 w-8" />,
+      icon: Eye,
       title: "PDLC Smart Film",
       description: "Switchable glass film for privacy on demand. Suitable for homes, offices, hospitals, and commercial interiors.",
       image: pdlcBanner,
@@ -19,7 +19,7 @@ const Services = () => {
       link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20PDLC%20services"
     },
     {
-      icon: <Monitor className="h-8 w-8" />,
+      icon: Monitor,
       title: "LED Display Systems",
       description: "High-quality indoor and outdoor LED displays for events, advertising, and architectural applications.",
       image: ledBanner,
@@ -27,7 +27,7 @@ const Services = () => {
       link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20LED%20DISPLAY%20services"
     },
     {
-      icon: <Music className="h-8 w-8" />,
+      icon: Music,
       title: "DJ Club Solutions",
       description: "Complete turnkey DJ club setups with immersive audio-visual experiences and interactive installations.",
       image: djBanner,
@@ -74,7 +74,7 @@ const Services = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
                 <div className="absolute top-4 left-4">
                   <AnimatedIcon 
-                    icon={service.icon as any}
+                    icon={service.icon}
                     className="p-3 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-lg text-white"
                     hoverEffect="glow"
                     delay={index * 100}
