@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Eye, Monitor, Music } from "lucide-react";
+import { ArrowRight, Eye, Monitor, Music, Info } from "lucide-react";
 import pdlcBanner from "@/assets/pdlc-banner.jpg";
 import ledBanner from "@/assets/led-banner.jpg";
 import djBanner from "@/assets/dj-banner.jpg";
@@ -11,8 +12,12 @@ import EnhancedScrollAnimation from "./EnhancedScrollAnimations";
 import GlassmorphismCard from "./GlassmorphismCard";
 import Interactive3DCard from "./Interactive3DCard";
 import AnimatedGradientBackground from "./AnimatedGradientBackground";
+import ServiceDetailModal from "./ServiceDetailModal";
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const services = [
     {
       icon: Eye,
@@ -20,7 +25,25 @@ const Services = () => {
       description: "Switchable glass film for privacy on demand. Suitable for homes, offices, hospitals, and commercial interiors.",
       image: pdlcBanner,
       features: ["Instant Privacy Control", "Energy Efficient", "Easy Installation", "Durable & Long-lasting"],
-      link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20PDLC%20services"
+      link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20PDLC%20services",
+      detailedInfo: {
+        fullTitle: "PDLC Smart Film (Switchable Glass/Film)",
+        whatIs: "PDLC (Polymer Dispersed Liquid Crystal) Smart Film is an advanced glass technology that allows you to instantly change the transparency of glass at the touch of a button or via smart automation. When powered ON, the film becomes clear and transparent, allowing natural light to pass through. When powered OFF, the film turns opaque, providing complete privacy while still allowing light diffusion.",
+        features: [
+          "Instant privacy control at the touch of a button",
+          "Energy efficient - reduces heat and glare",
+          "Easy installation on existing glass",
+          "Durable and long-lasting technology",
+          "Smart automation compatibility",
+          "Maintains natural light diffusion when opaque"
+        ],
+        perfectFor: [
+          { category: "Offices", details: "Boardrooms, meeting rooms, and private workspaces" },
+          { category: "Residential Spaces", details: "Bedrooms, bathrooms, and living rooms" },
+          { category: "Healthcare", details: "Patient rooms and consultation areas" },
+          { category: "Retail", details: "Display windows and store interiors" }
+        ]
+      }
     },
     {
       icon: Monitor,
@@ -28,7 +51,25 @@ const Services = () => {
       description: "High-quality indoor and outdoor LED displays for events, advertising, and architectural applications.",
       image: ledBanner,
       features: ["Ultra HD Resolution", "Weather Resistant", "Custom Configurations", "Professional Installation"],
-      link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20LED%20DISPLAY%20services"
+      link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20LED%20DISPLAY%20services",
+      detailedInfo: {
+        fullTitle: "LED Display Systems (Indoor & Outdoor)",
+        whatIs: "Our LED Display Systems offer cutting-edge visual technology for indoor and outdoor applications. These high-resolution displays deliver stunning visual experiences with vibrant colors, sharp clarity, and reliable performance. Perfect for advertising, events, architectural integration, and entertainment venues.",
+        features: [
+          "Ultra HD 4K+ resolution capabilities",
+          "Weather-resistant outdoor models",
+          "Custom size configurations",
+          "Energy-efficient LED technology",
+          "Remote content management",
+          "Professional installation and support"
+        ],
+        perfectFor: [
+          { category: "Events & Exhibitions", details: "Trade shows, conferences, and live events" },
+          { category: "Retail & Advertising", details: "Storefronts, shopping malls, and digital billboards" },
+          { category: "Entertainment Venues", details: "Theaters, clubs, and concert halls" },
+          { category: "Corporate Spaces", details: "Lobbies, presentation rooms, and digital signage" }
+        ]
+      }
     },
     {
       icon: Music,
@@ -36,9 +77,37 @@ const Services = () => {
       description: "Complete turnkey DJ club setups with immersive audio-visual experiences and interactive installations.",
       image: djBanner,
       features: ["Professional Sound Systems", "Interactive Lighting", "Turnkey Solutions", "Custom Design"],
-      link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20DJSOLUTION%20services"
+      link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20DJSOLUTION%20services",
+      detailedInfo: {
+        fullTitle: "DJ Club Solutions (Complete Entertainment Systems)",
+        whatIs: "Our DJ Club Solutions provide complete turnkey entertainment systems designed to create immersive audio-visual experiences. We integrate professional-grade sound systems, dynamic lighting, interactive installations, and custom design elements to transform any space into an world-class entertainment venue.",
+        features: [
+          "Professional-grade sound systems with crystal-clear audio",
+          "Interactive lighting synchronized with music",
+          "Custom booth and stage design",
+          "Advanced mixing and DJ equipment",
+          "Immersive visual effects and projections",
+          "Complete turnkey installation and setup"
+        ],
+        perfectFor: [
+          { category: "Nightclubs & Bars", details: "Complete club transformations with premium sound and lighting" },
+          { category: "Event Venues", details: "Wedding halls, party venues, and event spaces" },
+          { category: "Private Spaces", details: "Home entertainment rooms and private clubs" },
+          { category: "Commercial Venues", details: "Restaurants, lounges, and hospitality spaces" }
+        ]
+      }
     }
   ];
+
+  const handleKnowMore = (service: any) => {
+    setSelectedService({
+      ...service,
+      ...service.detailedInfo,
+      image: service.image,
+      link: service.link
+    });
+    setIsModalOpen(true);
+  };
 
   return (
     <section id="services" className="relative py-20 overflow-hidden">
@@ -118,18 +187,28 @@ const Services = () => {
                     ))}
                   </div>
 
-                  <Interactive3DCard intensity={10}>
-                    <MicroInteractionButton 
-                      className="w-full py-4 px-6 bg-gradient-to-r from-winmax-orange to-winmax-orange-light shadow-glow hover:shadow-neon transition-all duration-500 font-semibold text-base tracking-wide rounded-lg flex items-center justify-center"
-                      size="lg"
-                      onClick={() => window.open(service.link, '_blank')}
+                  <div className="flex gap-3">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 border-winmax-orange/50 text-winmax-orange hover:bg-winmax-orange/10"
+                      onClick={() => handleKnowMore(service)}
                     >
-                      <span className="flex items-center gap-3">
-                        Enquire Now
-                        <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform animate-bounce-gentle" />
-                      </span>
-                    </MicroInteractionButton>
-                  </Interactive3DCard>
+                      <Info className="h-4 w-4 mr-2" />
+                      Know More
+                    </Button>
+                    <Interactive3DCard intensity={10} className="flex-1">
+                      <MicroInteractionButton 
+                        className="w-full py-3 px-4 bg-gradient-to-r from-winmax-orange to-winmax-orange-light shadow-glow hover:shadow-neon transition-all duration-500 font-semibold text-sm tracking-wide rounded-lg flex items-center justify-center"
+                        onClick={() => window.open(service.link, '_blank')}
+                      >
+                        <span className="flex items-center gap-2">
+                          Enquire Now
+                          <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform animate-bounce-gentle" />
+                        </span>
+                      </MicroInteractionButton>
+                    </Interactive3DCard>
+                  </div>
                 </div>
               </CardContent>
                 </GlassmorphismCard>
@@ -159,6 +238,15 @@ const Services = () => {
           </div>
         </EnhancedScrollAnimation>
       </div>
+
+      {/* Service Detail Modal */}
+      {selectedService && (
+        <ServiceDetailModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          service={selectedService}
+        />
+      )}
     </section>
   );
 };
