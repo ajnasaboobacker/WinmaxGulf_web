@@ -35,9 +35,9 @@ const Hero = () => {
         <div className="absolute top-40 left-20 w-10 h-10 bg-winmax-orange/15 rounded-full animate-bounce hidden lg:block"></div>
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-40">
+      <div className="w-full px-4 lg:px-8 relative z-40">
         <EnhancedScrollAnimation animation="bounceIn" delay={200}>
-          <div className="max-w-3xl">
+          <div className="max-w-6xl mx-auto">
            {/* Badge */}
            <div className="inline-flex items-center px-6 py-3 rounded-full mb-6 bg-background/60 backdrop-blur border border-winmax-orange/20">
              <span className="text-sm font-medium text-winmax-orange">✨ Innovative Technology Solutions</span>
@@ -84,23 +84,32 @@ const Hero = () => {
 
            {/* Stats */}
            <EnhancedScrollAnimation animation="fadeInUp" delay={1000}>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
-                <div className="text-center p-6 bg-background/40 backdrop-blur-sm border border-winmax-orange/20 rounded-lg hover:border-winmax-orange/40 transition-colors">
-                  <div className="text-3xl md:text-4xl font-bold text-winmax-orange mb-2">500+</div>
-                  <div className="text-sm font-medium text-muted-foreground">Projects Completed</div>
-                  <div className="w-full h-1 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-full mt-3 opacity-60"></div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8 w-full max-w-5xl mx-auto">
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-winmax-orange/20 via-winmax-orange/10 to-background/40 backdrop-blur-sm border border-winmax-orange/30 p-8 group hover:border-winmax-orange/50 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-winmax-orange/5 to-transparent"></div>
+                  <div className="relative z-10">
+                    <div className="text-4xl md:text-5xl font-bold text-winmax-orange mb-3">500+</div>
+                    <div className="text-base font-medium text-foreground/80 mb-4">Projects Completed</div>
+                    <div className="w-full h-1 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-full opacity-70"></div>
+                  </div>
                 </div>
                 
-                <div className="text-center p-6 bg-background/40 backdrop-blur-sm border border-tech-blue/20 rounded-lg hover:border-tech-blue/40 transition-colors">
-                  <div className="text-3xl md:text-4xl font-bold text-tech-blue mb-2">15+</div>
-                  <div className="text-sm font-medium text-muted-foreground">Years Experience</div>
-                  <div className="w-full h-1 bg-gradient-to-r from-tech-blue to-tech-purple rounded-full mt-3 opacity-60"></div>
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-tech-blue/20 via-tech-blue/10 to-background/40 backdrop-blur-sm border border-tech-blue/30 p-8 group hover:border-tech-blue/50 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-tech-blue/5 to-transparent"></div>
+                  <div className="relative z-10">
+                    <div className="text-4xl md:text-5xl font-bold text-tech-blue mb-3">15+</div>
+                    <div className="text-base font-medium text-foreground/80 mb-4">Years Experience</div>
+                    <div className="w-full h-1 bg-gradient-to-r from-tech-blue to-tech-purple rounded-full opacity-70"></div>
+                  </div>
                 </div>
                 
-                <div className="text-center p-6 bg-background/40 backdrop-blur-sm border border-tech-purple/20 rounded-lg hover:border-tech-purple/40 transition-colors">
-                  <div className="text-3xl md:text-4xl font-bold text-tech-purple mb-2">100%</div>
-                  <div className="text-sm font-medium text-muted-foreground">Client Satisfaction</div>
-                  <div className="w-full h-1 bg-gradient-to-r from-tech-purple to-tech-cyan rounded-full mt-3 opacity-60"></div>
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-tech-purple/20 via-tech-purple/10 to-background/40 backdrop-blur-sm border border-tech-purple/30 p-8 group hover:border-tech-purple/50 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-tech-purple/5 to-transparent"></div>
+                  <div className="relative z-10">
+                    <div className="text-4xl md:text-5xl font-bold text-tech-purple mb-3">100%</div>
+                    <div className="text-base font-medium text-foreground/80 mb-4">Client Satisfaction</div>
+                    <div className="w-full h-1 bg-gradient-to-r from-tech-purple to-tech-cyan rounded-full opacity-70"></div>
+                  </div>
                 </div>
               </div>
            </EnhancedScrollAnimation>
