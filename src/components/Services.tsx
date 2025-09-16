@@ -190,8 +190,7 @@ const Services = () => {
                   <div className="flex gap-3">
                     <Button
                       variant="outline"
-                      size="sm"
-                      className="flex-1 border-winmax-orange/50 text-winmax-orange hover:bg-winmax-orange/10"
+                      className="flex-1 py-3 px-4 border-winmax-orange/50 text-winmax-orange hover:bg-winmax-orange/10 font-semibold text-sm tracking-wide rounded-lg h-auto"
                       onClick={() => handleKnowMore(service)}
                     >
                       <Info className="h-4 w-4 mr-2" />
@@ -199,7 +198,7 @@ const Services = () => {
                     </Button>
                     <Interactive3DCard intensity={10} className="flex-1">
                       <MicroInteractionButton 
-                        className="w-full py-3 px-4 bg-gradient-to-r from-winmax-orange to-winmax-orange-light shadow-glow hover:shadow-neon transition-all duration-500 font-semibold text-sm tracking-wide rounded-lg flex items-center justify-center"
+                        className="w-full py-3 px-4 bg-gradient-to-r from-winmax-orange to-winmax-orange-light shadow-glow hover:shadow-neon transition-all duration-500 font-semibold text-sm tracking-wide rounded-lg flex items-center justify-center h-auto"
                         onClick={() => window.open(service.link, '_blank')}
                       >
                         <span className="flex items-center gap-2">
