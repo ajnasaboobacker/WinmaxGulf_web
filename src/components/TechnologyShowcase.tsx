@@ -21,24 +21,24 @@ const TechnologyShowcase = () => {
       title: "LED Display Systems",
       subtitle: "Visual Communication",
       features: ["Ultra HD Resolution", "Weather Resistant", "Remote Control", "Custom Sizes"],
-      gradient: "from-tech-blue to-tech-cyan",
-      bgColor: "bg-tech-blue/10"
+      gradient: "from-winmax-orange to-winmax-orange-light",
+      bgColor: "bg-winmax-orange/10"
     },
     {
       icon: <Cpu className="h-8 w-8" />,
       title: "Smart Integration",
       subtitle: "IoT Connected",
       features: ["Mobile App Control", "Voice Commands", "Automated Scheduling", "Real-time Monitoring"],
-      gradient: "from-tech-purple to-tech-blue",
-      bgColor: "bg-tech-purple/10"
+      gradient: "from-winmax-orange to-winmax-orange-light",
+      bgColor: "bg-winmax-orange/10"
     },
     {
       icon: <Wifi className="h-8 w-8" />,
       title: "Wireless Solutions",
       subtitle: "Seamless Control",
       features: ["WiFi Enabled", "Cloud Management", "Multi-device Sync", "Remote Support"],
-      gradient: "from-tech-cyan to-winmax-orange",
-      bgColor: "bg-tech-cyan/10"
+      gradient: "from-winmax-orange to-winmax-orange-light",
+      bgColor: "bg-winmax-orange/10"
     }
   ];
 
@@ -47,14 +47,14 @@ const TechnologyShowcase = () => {
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-gradient-to-r from-tech-blue/20 to-tech-purple/20 text-tech-blue border-tech-blue/30">
+          <Badge className="mb-4 bg-winmax-orange/20 text-winmax-orange border-winmax-orange/30">
             Technology Innovation
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
             Cutting-Edge 
-            <span className="bg-gradient-to-r from-tech-blue to-tech-purple bg-clip-text text-transparent"> Technology</span>
+            <span className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light bg-clip-text text-transparent"> Technology</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Discover how our advanced technologies transform spaces with intelligent automation and seamless integration.
           </p>
         </div>
@@ -83,7 +83,7 @@ const TechnologyShowcase = () => {
                   <h3 className="text-xl font-bold mb-2 group-hover:text-winmax-orange transition-colors">
                     {tech.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4 font-medium">
+                  <p className="text-sm text-foreground/70 mb-4 font-medium">
                     {tech.subtitle}
                   </p>
                   
@@ -92,7 +92,7 @@ const TechnologyShowcase = () => {
                     {tech.features.map((feature, idx) => (
                       <li 
                         key={idx} 
-                        className={`text-sm flex items-center transition-all duration-300 ${
+                        className={`text-sm text-foreground/80 flex items-center transition-all duration-300 ${
                           hoveredTech === index ? 'translate-x-2' : ''
                         }`}
                         style={{ animationDelay: `${idx * 100}ms` }}
@@ -123,11 +123,11 @@ const TechnologyShowcase = () => {
         {/* Interactive Demo Section */}
         <div className="relative bg-gradient-to-r from-card to-secondary/20 rounded-2xl p-8 border border-border/50">
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-2xl font-bold mb-4 text-foreground">
               See Our Technology in 
-              <span className="bg-gradient-to-r from-winmax-orange to-tech-blue bg-clip-text text-transparent"> Action</span>
+              <span className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light bg-clip-text text-transparent"> Action</span>
             </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
               Experience live demonstrations of our smart glass and LED display systems. Book a consultation to see how our technology can transform your space.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -142,7 +142,7 @@ const TechnologyShowcase = () => {
               <Button 
                 variant="outline"
                 size="lg"
-                className="border-tech-blue text-tech-blue hover:bg-tech-blue hover:text-white hover:scale-105 transition-all duration-300 group"
+                className="border-winmax-orange text-winmax-orange hover:bg-winmax-orange hover:text-white hover:scale-105 transition-all duration-300 group"
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-125 transition-transform duration-300" />
                 Watch Videos
@@ -151,8 +151,8 @@ const TechnologyShowcase = () => {
           </div>
 
           {/* Floating Background Elements */}
-          <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-r from-winmax-orange/20 to-tech-blue/20 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-r from-tech-purple/20 to-tech-cyan/20 rounded-full animate-bounce-gentle"></div>
+          <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-r from-winmax-orange/20 to-winmax-orange-light/20 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-r from-winmax-orange/20 to-winmax-orange-light/20 rounded-full animate-bounce-gentle"></div>
         </div>
       </div>
     </section>
