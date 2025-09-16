@@ -1,218 +1,172 @@
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Power, Eye, EyeOff, Building, Home } from "lucide-react";
-import conferenceRoom from "@/assets/conference-room.jpg";
-import bedroomRoom from "@/assets/bedroom-room.jpg";
+import { Play, Pause, RotateCcw, Volume2, VolumeX } from "lucide-react";
 
 const PDLCDemo = () => {
-  const [isTransparent, setIsTransparent] = useState(false);
-  const [isAutoDemo, setIsAutoDemo] = useState(true);
-  const [roomType, setRoomType] = useState<'conference' | 'bedroom'>('conference');
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  const rooms = {
-    conference: {
-      image: conferenceRoom,
-      title: "Conference Room",
-      description: "Private business meetings"
-    },
-    bedroom: {
-      image: bedroomRoom,
-      title: "Bedroom", 
-      description: "Personal privacy space"
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
     }
   };
 
-  // Auto-demo effect
-  useEffect(() => {
-    if (isAutoDemo) {
-      const interval = setInterval(() => {
-        setIsTransparent(prev => !prev);
-      }, 3000);
-      
-      return () => clearInterval(interval);
+  const restartVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+      setIsPlaying(true);
     }
-  }, [isAutoDemo]);
-
-  const toggleGlass = () => {
-    setIsAutoDemo(false);
-    setIsTransparent(!isTransparent);
   };
 
-  const switchRoom = () => {
-    setRoomType(roomType === 'conference' ? 'bedroom' : 'conference');
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
   };
 
-  const currentRoom = rooms[roomType];
+  const handleVideoEnd = () => {
+    setIsPlaying(false);
+  };
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="relative w-full max-w-5xl mx-auto">
       {/* Demo Container */}
       <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-background/20 to-background/40 backdrop-blur-sm border border-winmax-orange/20 p-8">
         
         {/* Title */}
-        <div className="text-center mb-6">
-          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            PDLC Smart Glass Windows - {currentRoom.title}
+        <div className="text-center mb-8">
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Real PDLC Smart Film Demonstration
           </h3>
-          <p className="text-muted-foreground">
-            {currentRoom.description} - Watch only the window glasses switch
+          <p className="text-lg text-muted-foreground">
+            Watch actual PDLC smart film technology in action - switching from opaque to transparent instantly
           </p>
         </div>
 
-        {/* Glass Demo Area */}
-        <div className="relative h-80 md:h-96 rounded-xl overflow-hidden border-4 border-gray-300 bg-gray-100 shadow-2xl">
+        {/* Video Demo Area */}
+        <div className="relative rounded-xl overflow-hidden border-4 border-gray-300 bg-black shadow-2xl">
           
-          {/* Real Room Background - Always Visible */}
-          <div className="absolute inset-0">
-            <img 
-              src={currentRoom.image}
-              alt={`${currentRoom.title} interior`}
-              className="w-full h-full object-cover"
-            />
-            {/* Subtle overlay for better contrast */}
-            <div className="absolute inset-0 bg-black/5"></div>
+          {/* Video Player */}
+          <video
+            ref={videoRef}
+            className="w-full h-auto max-h-[600px] object-cover"
+            onEnded={handleVideoEnd}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            muted={isMuted}
+            playsInline
+            preload="metadata"
+          >
+            <source src="/assets/pdlc-demo-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          {/* Video Overlay Controls */}
+          <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div className="flex items-center gap-4">
+              <Button
+                onClick={togglePlay}
+                size="lg"
+                className="bg-white/90 text-black hover:bg-white rounded-full w-16 h-16 flex items-center justify-center"
+              >
+                {isPlaying ? <Pause className="h-8 w-8" /> : <Play className="h-8 w-8 ml-1" />}
+              </Button>
+            </div>
           </div>
-
-          {/* PDLC Glass Windows - Only on specific window areas */}
-          {roomType === 'conference' && (
-            <>
-              {/* Left Window */}
-              <div 
-                className={`absolute top-8 left-8 w-24 h-32 md:w-32 md:h-40 transition-all duration-1000 ease-in-out rounded-lg ${
-                  isTransparent 
-                    ? 'bg-transparent backdrop-blur-none border-2 border-white/30' 
-                    : 'bg-white/90 backdrop-blur-md border-2 border-gray-300'
-                }`}
-              >
-                {!isTransparent && (
-                  <div className="absolute inset-0 rounded-lg">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/70 to-gray-100/70 rounded-lg"></div>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.9)_1px,transparent_1px)] bg-[length:15px_15px] opacity-50 rounded-lg"></div>
-                  </div>
-                )}
-              </div>
-              
-              {/* Right Window */}
-              <div 
-                className={`absolute top-12 right-12 w-20 h-28 md:w-28 md:h-36 transition-all duration-1000 ease-in-out rounded-lg ${
-                  isTransparent 
-                    ? 'bg-transparent backdrop-blur-none border-2 border-white/30' 
-                    : 'bg-white/90 backdrop-blur-md border-2 border-gray-300'
-                }`}
-              >
-                {!isTransparent && (
-                  <div className="absolute inset-0 rounded-lg">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/70 to-gray-100/70 rounded-lg"></div>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.9)_1px,transparent_1px)] bg-[length:15px_15px] opacity-50 rounded-lg"></div>
-                  </div>
-                )}
-              </div>
-            </>
-          )}
-
-          {roomType === 'bedroom' && (
-            <>
-              {/* Main Window */}
-              <div 
-                className={`absolute top-6 right-8 w-32 h-40 md:w-40 md:h-48 transition-all duration-1000 ease-in-out rounded-lg ${
-                  isTransparent 
-                    ? 'bg-transparent backdrop-blur-none border-2 border-white/30' 
-                    : 'bg-white/90 backdrop-blur-md border-2 border-gray-300'
-                }`}
-              >
-                {!isTransparent && (
-                  <div className="absolute inset-0 rounded-lg">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/70 to-gray-100/70 rounded-lg"></div>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.9)_1px,transparent_1px)] bg-[length:15px_15px] opacity-50 rounded-lg"></div>
-                  </div>
-                )}
-              </div>
-              
-              {/* Side Window */}
-              <div 
-                className={`absolute top-16 left-6 w-16 h-24 md:w-20 md:h-28 transition-all duration-1000 ease-in-out rounded-lg ${
-                  isTransparent 
-                    ? 'bg-transparent backdrop-blur-none border-2 border-white/30' 
-                    : 'bg-white/90 backdrop-blur-md border-2 border-gray-300'
-                }`}
-              >
-                {!isTransparent && (
-                  <div className="absolute inset-0 rounded-lg">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/70 to-gray-100/70 rounded-lg"></div>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.9)_1px,transparent_1px)] bg-[length:15px_15px] opacity-50 rounded-lg"></div>
-                  </div>
-                )}
-              </div>
-            </>
-          )}
 
           {/* Status Indicator */}
           <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/90 backdrop-blur-sm rounded-full px-4 py-2 border border-winmax-orange/20">
             <div className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-              isTransparent ? 'bg-green-500' : 'bg-red-500'
+              isPlaying ? 'bg-green-500 animate-pulse' : 'bg-gray-400'
             }`}></div>
             <span className="text-sm font-medium">
-              Windows: {isTransparent ? 'Clear' : 'Private'}
+              {isPlaying ? 'Playing Demo' : 'Demo Ready'}
             </span>
           </div>
 
-          {/* Power Ripple Effect */}
-          {!isAutoDemo && (
-            <div className="absolute top-4 right-4">
-              <div className="relative">
-                <div className="w-4 h-4 bg-winmax-orange rounded-full animate-ping"></div>
-                <div className="absolute inset-0 w-4 h-4 bg-winmax-orange rounded-full"></div>
+          {/* Video Progress Indicator */}
+          {isPlaying && (
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
+                <div className="h-full bg-winmax-orange animate-pulse rounded-full"></div>
               </div>
             </div>
           )}
         </div>
 
         {/* Controls */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Button
-            onClick={toggleGlass}
+            onClick={togglePlay}
             size="lg"
-            className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+            className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 px-10 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
           >
-            <Power className="mr-2 h-5 w-5" />
-            {isTransparent ? 'Turn OFF (Private)' : 'Turn ON (Transparent)'}
+            {isPlaying ? <Pause className="mr-2 h-5 w-5" /> : <Play className="mr-2 h-5 w-5" />}
+            {isPlaying ? 'Pause Demo' : 'Play Demo'}
           </Button>
           
           <Button
-            onClick={() => setIsAutoDemo(!isAutoDemo)}
+            onClick={restartVideo}
             variant="outline"
             size="lg"
-            className="border-2 border-winmax-orange text-winmax-orange hover:bg-winmax-orange/10 px-8 py-4 text-lg font-semibold rounded-full"
+            className="border-2 border-winmax-orange text-winmax-orange hover:bg-winmax-orange/10 px-10 py-4 text-lg font-semibold rounded-full"
           >
-            {isAutoDemo ? <EyeOff className="mr-2 h-5 w-5" /> : <Eye className="mr-2 h-5 w-5" />}
-            {isAutoDemo ? 'Stop Auto Demo' : 'Start Auto Demo'}
+            <RotateCcw className="mr-2 h-5 w-5" />
+            Restart Demo
           </Button>
 
           <Button
-            onClick={switchRoom}
+            onClick={toggleMute}
             variant="outline"
             size="lg"
-            className="border-2 border-tech-blue text-tech-blue hover:bg-tech-blue/10 px-8 py-4 text-lg font-semibold rounded-full"
+            className="border-2 border-tech-blue text-tech-blue hover:bg-tech-blue/10 px-10 py-4 text-lg font-semibold rounded-full"
           >
-            {roomType === 'conference' ? <Home className="mr-2 h-5 w-5" /> : <Building className="mr-2 h-5 w-5" />}
-            Switch to {roomType === 'conference' ? 'Bedroom' : 'Conference'}
+            {isMuted ? <VolumeX className="mr-2 h-5 w-5" /> : <Volume2 className="mr-2 h-5 w-5" />}
+            {isMuted ? 'Unmute' : 'Mute'}
           </Button>
         </div>
 
-        {/* Technical Info */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-          <div className="p-4 bg-background/40 backdrop-blur-sm rounded-lg border border-winmax-orange/10">
-            <div className="text-sm font-medium text-muted-foreground">Switch Time</div>
-            <div className="text-xl font-bold text-winmax-orange">0.1s</div>
+        {/* Technical Features */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+          <div className="p-6 bg-background/40 backdrop-blur-sm rounded-xl border border-winmax-orange/10 hover:border-winmax-orange/30 transition-colors">
+            <div className="text-sm font-medium text-muted-foreground mb-2">Switch Time</div>
+            <div className="text-2xl font-bold text-winmax-orange">0.1s</div>
           </div>
-          <div className="p-4 bg-background/40 backdrop-blur-sm rounded-lg border border-winmax-orange/10">
-            <div className="text-sm font-medium text-muted-foreground">Power Usage</div>
-            <div className="text-xl font-bold text-tech-blue">5W/m²</div>
+          <div className="p-6 bg-background/40 backdrop-blur-sm rounded-xl border border-tech-blue/10 hover:border-tech-blue/30 transition-colors">
+            <div className="text-sm font-medium text-muted-foreground mb-2">Power Usage</div>
+            <div className="text-2xl font-bold text-tech-blue">5W/m²</div>
           </div>
-          <div className="p-4 bg-background/40 backdrop-blur-sm rounded-lg border border-winmax-orange/10">
-            <div className="text-sm font-medium text-muted-foreground">Transparency</div>
-            <div className="text-xl font-bold text-tech-purple">85%</div>
+          <div className="p-6 bg-background/40 backdrop-blur-sm rounded-xl border border-tech-purple/10 hover:border-tech-purple/30 transition-colors">
+            <div className="text-sm font-medium text-muted-foreground mb-2">Transparency</div>
+            <div className="text-2xl font-bold text-tech-purple">85%</div>
           </div>
+          <div className="p-6 bg-background/40 backdrop-blur-sm rounded-xl border border-tech-cyan/10 hover:border-tech-cyan/30 transition-colors">
+            <div className="text-sm font-medium text-muted-foreground mb-2">Operating Voltage</div>
+            <div className="text-2xl font-bold text-tech-cyan">48V AC</div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-10 text-center">
+          <p className="text-lg text-muted-foreground mb-6">
+            See the technology in action at your location
+          </p>
+          <Button
+            onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20see%20a%20PDLC%20smart%20film%20demonstration', '_blank')}
+            size="lg"
+            className="bg-gradient-to-r from-tech-blue to-tech-purple hover:opacity-90 px-12 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+          >
+            Request Live Demo
+          </Button>
         </div>
       </div>
     </div>
