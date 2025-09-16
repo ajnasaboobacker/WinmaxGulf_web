@@ -30,7 +30,7 @@ const Header = () => {
             <img 
               src={winmaxLogo}
               alt="Winmax Gulf Logo"
-              className="h-8 md:h-10 w-auto filter drop-shadow-[0_0_10px_rgba(255,165,0,0.5)] hover:drop-shadow-[0_0_15px_rgba(255,165,0,0.7)] transition-all duration-300"
+              className="h-8 md:h-10 w-auto filter brightness-150 contrast-125 drop-shadow-[0_0_20px_rgba(255,165,0,0.9)] drop-shadow-[0_0_40px_rgba(255,165,0,0.6)] hover:drop-shadow-[0_0_30px_rgba(255,165,0,1)] hover:drop-shadow-[0_0_60px_rgba(255,165,0,0.8)] transition-all duration-300"
             />
           </div>
 
