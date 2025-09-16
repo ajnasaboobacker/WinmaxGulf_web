@@ -27,11 +27,17 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src={winmaxLogo}
-              alt="Winmax Gulf Logo"
-              className="h-8 md:h-10 w-auto filter brightness-150 contrast-125 drop-shadow-[0_0_20px_rgba(255,165,0,0.9)] drop-shadow-[0_0_40px_rgba(255,165,0,0.6)] hover:drop-shadow-[0_0_30px_rgba(255,165,0,1)] hover:drop-shadow-[0_0_60px_rgba(255,165,0,0.8)] transition-all duration-300"
-            />
+            <div className="relative p-2 rounded-xl bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src={winmaxLogo}
+                alt="Winmax Gulf Logo"
+                className="h-6 md:h-8 w-auto filter brightness-125 contrast-125 saturate-150 drop-shadow-[0_0_25px_rgba(255,165,0,1)] drop-shadow-[0_0_50px_rgba(255,165,0,0.7)] hover:drop-shadow-[0_0_35px_rgba(255,165,0,1)] hover:drop-shadow-[0_0_70px_rgba(255,165,0,0.9)] transition-all duration-300"
+                style={{
+                  filter: 'brightness(1.3) contrast(1.2) saturate(1.5) drop-shadow(0 0 25px rgba(255,165,0,1)) drop-shadow(0 0 50px rgba(255,165,0,0.7)) drop-shadow(0 0 10px rgba(255,255,255,0.3))'
+                }}
+              />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-winmax-orange/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
