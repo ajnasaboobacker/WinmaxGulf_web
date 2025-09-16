@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import AnimatedIcon from "./AnimatedIcon";
 import { MicroInteractionButton } from "./Microinteractions";
+import winmaxLogo from "@/assets/winmax-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,13 +26,12 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-winmax.orange to-winmax.orange-light rounded-lg flex items-center justify-center animate-glow-pulse">
-              <span className="text-white font-bold text-sm animate-wiggle">W</span>
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-winmax.orange to-winmax.orange-light bg-clip-text text-transparent">
-              Winmax Gulf
-            </span>
+          <div className="flex items-center">
+            <img 
+              src={winmaxLogo}
+              alt="Winmax Gulf Logo"
+              className="h-8 md:h-10 w-auto filter drop-shadow-[0_0_10px_rgba(255,165,0,0.5)] hover:drop-shadow-[0_0_15px_rgba(255,165,0,0.7)] transition-all duration-300"
+            />
           </div>
 
           {/* Desktop Navigation */}
