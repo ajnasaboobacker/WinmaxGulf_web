@@ -9,7 +9,7 @@ interface AnimatedIconProps {
 }
 
 const AnimatedIcon = ({ 
-  icon: Icon, 
+  icon: IconComponent, 
   className = "", 
   hoverEffect = "scale",
   delay = 0
@@ -69,7 +69,7 @@ const AnimatedIcon = ({
       onMouseLeave={() => setIsHovered(false)}
       style={{ animationDelay: `${delay}ms` }}
     >
-      <Icon className="w-full h-full" />
+      <IconComponent className="w-full h-full" />
     </div>
   );
 };
