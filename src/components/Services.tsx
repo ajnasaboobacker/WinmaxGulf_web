@@ -54,7 +54,7 @@ const Services = () => {
       link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20LED%20DISPLAY%20services",
       detailedInfo: {
         fullTitle: "LED Display Systems (Indoor & Outdoor)",
-        whatIs: "OWinmaxGulf is a premier provider of turnkey solutions for DJ nightclubs and entertainment venues. We specialize in the supply, installation, and integration of state-of-the-art sound, lighting, video, rigging, and special effects systems. From conceptual design and 3D visualization to final execution and handover, we create immersive nightlife experiences that match international standards.ents for your guests..",
+        whatIs: "Our LED Display Systems offer cutting-edge visual technology for indoor and outdoor applications. These high-resolution displays deliver stunning visual experiences with vibrant colors, sharp clarity, and reliable performance. Perfect for advertising, events, architectural integration, and entertainment venues.",
         features: [
           "Ultra HD 4K+ resolution capabilities",
           "Weather-resistant outdoor models",
