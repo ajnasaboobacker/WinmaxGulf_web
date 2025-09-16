@@ -53,12 +53,6 @@ export default {
           dark: "hsl(var(--winmax-dark))",
           gray: "hsl(var(--winmax-gray))",
         },
-        tech: {
-          blue: "hsl(var(--tech-blue))",
-          purple: "hsl(var(--tech-purple))",
-          cyan: "hsl(var(--tech-cyan))",
-          orange: "hsl(var(--tech-orange))",
-        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

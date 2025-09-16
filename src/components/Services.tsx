@@ -124,7 +124,7 @@ const Services = () => {
           <EnhancedScrollAnimation animation="slideInRotate" delay={200}>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Complete Technology 
-              <span className="bg-gradient-to-r from-winmax-orange via-tech-blue to-winmax-orange-light bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]"> Solutions</span>
+              <span className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light bg-clip-text text-transparent"> Solutions</span>
             </h2>
           </EnhancedScrollAnimation>
           
@@ -157,7 +157,7 @@ const Services = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-winmax-orange/10 via-transparent to-tech-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-winmax-orange/10 to-winmax-orange/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-4 left-4">
                   <AnimatedIcon 
                     icon={service.icon}
@@ -169,7 +169,7 @@ const Services = () => {
               </div>
               
               <CardContent className="p-6 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-winmax-orange/5 via-transparent to-tech-blue/5 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-winmax-orange/5 to-winmax-orange/2 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
                   <h3 className="text-xl font-bold mb-3 group-hover:text-winmax-orange transition-colors duration-300">
                     {service.title}
@@ -181,7 +181,7 @@ const Services = () => {
                   <div className="space-y-3 mb-6">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center text-sm group/feature hover:text-winmax-orange transition-colors">
-                        <div className="w-2 h-2 bg-gradient-to-r from-winmax-orange to-tech-blue rounded-full mr-3 group-hover/feature:scale-125 transition-transform"></div>
+                        <div className="w-2 h-2 bg-winmax-orange rounded-full mr-3 group-hover/feature:scale-125 transition-transform"></div>
                         <span>{feature}</span>
                       </div>
                     ))}

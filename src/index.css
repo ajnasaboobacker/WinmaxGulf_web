@@ -36,32 +36,27 @@ All colors MUST be HSL.
     --input: 240 3.7% 15.9%;
     --ring: 240 100% 90%;
 
-    /* Winmax Gulf brand color palette */
+    /* Winmax Gulf brand color palette - Simplified and Uniform */
     --winmax-orange: 25 95% 53%;
-    --winmax-orange-light: 35 95% 65%;
+    --winmax-orange-light: 25 95% 63%;
     --winmax-dark: 220 15% 15%;
     --winmax-gray: 210 10% 45%;
     
-/* Interactive accent colors */
-    --tech-blue: 217 91% 60%;
-    --tech-purple: 262 83% 58%;
-    --tech-cyan: 189 85% 60%;
-    --tech-orange: 25 95% 53%;
+    /* Simplified accent colors - Using winmax-orange as primary */
+    --tech-accent: 25 95% 53%;
     
-    /* Professional gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(25 95% 53%), hsl(35 95% 65%));
-    --gradient-accent: linear-gradient(90deg, hsl(25 95% 53%), hsl(220 15% 15%));
+    /* Unified gradients using only brand colors */
+    --gradient-primary: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 63%));
     --gradient-card: linear-gradient(145deg, hsl(240 3.7% 15.9%), hsl(240 10% 3.9%));
-    --gradient-interactive: linear-gradient(45deg, hsl(25 95% 53%), hsl(217 91% 60%));
-    --gradient-hover: linear-gradient(135deg, hsl(35 95% 65%), hsl(25 95% 53%));
+    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 3.9%), hsl(240 3.7% 15.9%));
     
-    /* Enhanced shadows and glows */
-    --shadow-glow: 0 0 40px hsl(25 95% 53% / 0.3);
+    /* Consistent shadows using only brand orange */
+    --shadow-glow: 0 0 30px hsl(25 95% 53% / 0.25);
     --shadow-card: 0 8px 32px hsl(240 10% 3.9% / 0.3);
-    --shadow-interactive: 0 10px 25px hsl(25 95% 53% / 0.2);
-    --shadow-elevation: 0 20px 40px hsl(240 10% 3.9% / 0.4);
+    --shadow-interactive: 0 8px 20px hsl(25 95% 53% / 0.15);
+    --shadow-elevation: 0 16px 32px hsl(240 10% 3.9% / 0.4);
     --shadow-glass: 0 8px 32px hsl(240 10% 3.9% / 0.2);
-    --shadow-neon: 0 0 20px hsl(25 95% 53% / 0.5), 0 0 40px hsl(25 95% 53% / 0.3), 0 0 60px hsl(25 95% 53% / 0.1);
+    --shadow-neon: 0 0 15px hsl(25 95% 53% / 0.4), 0 0 30px hsl(25 95% 53% / 0.2);
     --shadow-depth: 0 25px 50px hsl(240 10% 3.9% / 0.5), 0 12px 25px hsl(240 10% 3.9% / 0.3);
     
     /* Animation variables */

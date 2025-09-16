@@ -64,7 +64,7 @@ const ServiceDetailModal = ({ isOpen, onClose, service }: ServiceDetailModalProp
             <div className="grid md:grid-cols-2 gap-3">
               {service.features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-3 p-3 rounded-lg bg-muted/50">
-                  <div className="w-2 h-2 bg-gradient-to-r from-winmax-orange to-tech-blue rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-winmax-orange rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-sm">{feature}</span>
                 </div>
               ))}
