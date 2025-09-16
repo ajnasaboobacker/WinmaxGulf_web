@@ -37,7 +37,7 @@ const Hero = () => {
 
       <div className="w-full px-6 lg:px-12 relative z-40">
         <EnhancedScrollAnimation animation="bounceIn" delay={200}>
-          <div className="max-w-7xl mx-auto py-20 lg:py-32">
+          <div className="max-w-7xl mx-auto py-20 lg:py-32 overflow-visible">
            {/* Badge */}
            <div className="inline-flex items-center px-8 py-4 rounded-full mb-8 bg-background/70 backdrop-blur-md border border-winmax-orange/30 shadow-lg">
              <span className="text-base font-medium text-winmax-orange">✨ Innovative Technology Solutions</span>
@@ -45,9 +45,9 @@ const Hero = () => {
 
            {/* Main Heading */}
            <EnhancedScrollAnimation animation="slideInRotate" delay={400}>
-             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight">
+             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-12 leading-[1.2] tracking-tight pb-4">
                Transform Your Space with 
-               <span className="block bg-gradient-to-r from-winmax-orange via-tech-blue to-winmax-orange-light bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] mt-2"> Smart Technology</span>
+               <span className="block bg-gradient-to-r from-winmax-orange via-tech-blue to-winmax-orange-light bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] mt-4 pb-2"> Smart Technology</span>
              </h1>
            </EnhancedScrollAnimation>
 
