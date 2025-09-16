@@ -120,12 +120,14 @@ const Services = () => {
 
                   <Interactive3DCard intensity={10}>
                     <MicroInteractionButton 
-                      className="w-full py-4 px-6 bg-gradient-to-r from-winmax-orange to-winmax-orange-light shadow-glow hover:shadow-neon transition-all duration-500 font-semibold text-base tracking-wide rounded-lg"
+                      className="w-full py-4 px-6 bg-gradient-to-r from-winmax-orange to-winmax-orange-light shadow-glow hover:shadow-neon transition-all duration-500 font-semibold text-base tracking-wide rounded-lg flex items-center justify-center"
                       size="lg"
                       onClick={() => window.open(service.link, '_blank')}
                     >
-                      Enquire Now
-                      <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform animate-bounce-gentle" />
+                      <span className="flex items-center gap-3">
+                        Enquire Now
+                        <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform animate-bounce-gentle" />
+                      </span>
                     </MicroInteractionButton>
                   </Interactive3DCard>
                 </div>
