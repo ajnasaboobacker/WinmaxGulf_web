@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@/assets/hero-smart-glass.jpg";
+import heroImage from "@/assets/hero-smart-technology.jpg";
 import ParallaxSection from "./ParallaxSection";
 import ScrollAnimation from "./ScrollAnimations";
 import { MicroInteractionButton } from "./Microinteractions";
@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-10">
         <img 
           src={heroImage}
-          alt="Smart glass technology"
+          alt="Smart technology and LED display solutions"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/85 to-background/30"></div>
