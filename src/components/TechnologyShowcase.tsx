@@ -134,7 +134,7 @@ const TechnologyShowcase = () => {
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:scale-105 hover:shadow-lg transition-all duration-300 group"
-                onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20see%20a%20live%20demo%20of%20your%20technology', '_blank')}
+                onClick={() => window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20see%20a%20live%20demo%20of%20your%20technology', '_blank')}
               >
                 Book Live Demo
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />

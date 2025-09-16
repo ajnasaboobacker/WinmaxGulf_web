@@ -25,7 +25,7 @@ const Services = () => {
       description: "Switchable glass film for privacy on demand. Suitable for homes, offices, hospitals, and commercial interiors.",
       image: pdlcBanner,
       features: ["Instant Privacy Control", "Energy Efficient", "Easy Installation", "Durable & Long-lasting"],
-      link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20PDLC%20services",
+      link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20PDLC%20services",
       detailedInfo: {
         fullTitle: "PDLC Smart Film (Switchable Glass/Film)",
         whatIs: "PDLC (Polymer Dispersed Liquid Crystal) Smart Film is an advanced glass technology that allows you to instantly change the transparency of glass at the touch of a button or via smart automation. When powered ON, the film becomes clear and transparent, allowing natural light to pass through. When powered OFF, the film turns opaque, providing complete privacy while still allowing light diffusion.",
@@ -51,7 +51,7 @@ const Services = () => {
       description: "High-quality indoor and outdoor LED displays for events, advertising, and architectural applications.",
       image: ledBanner,
       features: ["Ultra HD Resolution", "Weather Resistant", "Custom Configurations", "Professional Installation"],
-      link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20LED%20DISPLAY%20services",
+      link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20LED%20DISPLAY%20services",
       detailedInfo: {
         fullTitle: "LED Display Systems (Indoor & Outdoor)",
         whatIs: "WinmaxGulf is a premier provider of turnkey solutions for DJ nightclubs and entertainment venues. We specialize in the supply, installation, and integration of state-of-the-art sound, lighting, video, rigging, and special effects systems. From conceptual design and 3D visualization to final execution and handover, we create immersive nightlife experiences that match international standards.\n\nWith a team of expert engineers, designers, and technicians, and partnerships with leading global brands, WinmaxGulf ensures every nightclub we deliver is optimized for sound quality, lighting brilliance, and visual impact, creating unforgettable moments for your guests.",
@@ -77,7 +77,7 @@ const Services = () => {
       description: "Complete turnkey DJ club setups with immersive audio-visual experiences and interactive installations.",
       image: djBanner,
       features: ["Professional Sound Systems", "Interactive Lighting", "Turnkey Solutions", "Custom Design"],
-      link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20DJSOLUTION%20services",
+      link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20DJSOLUTION%20services",
       detailedInfo: {
         fullTitle: "DJ Club Solutions (Complete Entertainment Systems)",
         whatIs: "Our DJ Club Solutions provide complete turnkey entertainment systems designed to create immersive audio-visual experiences. We integrate professional-grade sound systems, dynamic lighting, interactive installations, and custom design elements to transform any space into an world-class entertainment venue.",
@@ -228,7 +228,7 @@ const Services = () => {
                   size="lg"
                   variant="outline"
                   className="border-2 border-winmax-orange text-winmax-orange hover:bg-winmax-orange/20 transition-all duration-500 px-8 py-3 font-semibold hover:scale-105 hover:shadow-glow"
-                  onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20custom%20solutions', '_blank')}
+                  onClick={() => window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20custom%20solutions', '_blank')}
                 >
                   Get Custom Quote ✨
                 </Button>

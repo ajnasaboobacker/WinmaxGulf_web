@@ -161,7 +161,7 @@ const PDLCDemo = () => {
             See the technology in action at your location
           </p>
           <Button
-            onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20see%20a%20PDLC%20smart%20film%20demonstration', '_blank')}
+            onClick={() => window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20see%20a%20PDLC%20smart%20film%20demonstration', '_blank')}
             size="lg"
             className="bg-gradient-to-r from-tech-blue to-tech-purple hover:opacity-90 px-12 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
           >

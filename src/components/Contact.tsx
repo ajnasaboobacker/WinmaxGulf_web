@@ -6,7 +6,19 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Phone className="h-6 w-6" />,
+      title: "Phone Numbers",
+      value: "+971 527 200 466",
+      link: "tel:+971527200466"
+    },
+    {
+      icon: <Phone className="h-6 w-6" />,
       title: "Phone",
+      value: "+971 504 171 875",
+      link: "tel:+971504171875"
+    },
+    {
+      icon: <Phone className="h-6 w-6" />,
+      title: "Office",
       value: "+971 4 271 3101",
       link: "tel:+97142713101"
     },
@@ -14,7 +26,7 @@ const Contact = () => {
       icon: <MessageCircle className="h-6 w-6" />,
       title: "WhatsApp",
       value: "Chat with us",
-      link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20services"
+      link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20services"
     },
     {
       icon: <Mail className="h-6 w-6" />,
@@ -31,10 +43,10 @@ const Contact = () => {
   ];
 
   const services = [
-    { name: "PDLC Smart Film", link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20PDLC%20services" },
-    { name: "LED Display Systems", link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20LED%20DISPLAY%20services" },
-    { name: "DJ Club Solutions", link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20DJSOLUTION%20services" },
-    { name: "Custom Solutions", link: "https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20custom%20solutions" }
+    { name: "PDLC Smart Film", link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20PDLC%20services" },
+    { name: "LED Display Systems", link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20LED%20DISPLAY%20services" },
+    { name: "DJ Club Solutions", link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20DJSOLUTION%20services" },
+    { name: "Custom Solutions", link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20custom%20solutions" }
   ];
 
   return (
@@ -136,7 +148,7 @@ const Contact = () => {
                 <Button 
                   size="lg"
                   className="w-full bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 transition-opacity"
-                  onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank')}
+                  onClick={() => window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank')}
                 >
                   Start WhatsApp Chat
                 </Button>
@@ -166,7 +178,7 @@ const Contact = () => {
             <Button 
               size="lg"
               className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 transition-opacity"
-              onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20schedule%20a%20free%20consultation', '_blank')}
+              onClick={() => window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20schedule%20a%20free%20consultation', '_blank')}
             >
               Get Free Consultation
             </Button>

@@ -62,7 +62,7 @@ const Header = () => {
           <div className="hidden md:block">
             <MicroInteractionButton 
               className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light text-white hover:shadow-xl hover:shadow-winmax-orange/30"
-              onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank')}
+              onClick={() => window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank')}
             >
               Get Quote
               <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -120,7 +120,7 @@ const Header = () => {
               <Button 
                 className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light text-white hover:opacity-90 transition-opacity mt-4"
                 onClick={() => {
-                  window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank');
+                  window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank');
                   setIsMenuOpen(false);
                 }}
               >
