@@ -27,10 +27,10 @@ const Testimonials = () => {
     <section className="py-20 bg-gradient-to-b from-muted/20 to-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
             What Our <span className="text-winmax-orange">Clients Say</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our satisfied clients have to say about our services.
           </p>
         </div>
@@ -48,7 +48,7 @@ const Testimonials = () => {
                   </div>
                 </div>
                 
-                <p className="text-muted-foreground mb-6 leading-relaxed italic">
+                <p className="text-foreground/80 mb-6 leading-relaxed italic">
                   "{testimonial.content}"
                 </p>
                 
@@ -60,7 +60,7 @@ const Testimonials = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-winmax-orange">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                    <div className="text-sm text-foreground/70">{testimonial.role}</div>
                   </div>
                 </div>
               </CardContent>

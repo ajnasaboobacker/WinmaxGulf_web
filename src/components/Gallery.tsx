@@ -43,10 +43,10 @@ const Gallery = () => {
       <section className="py-20 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               Our <span className="text-winmax-orange">Project Gallery</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
               Explore our completed projects and see how we transform spaces with innovative technology solutions.
             </p>
           </div>
