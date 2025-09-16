@@ -26,42 +26,42 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-lg flex items-center justify-center animate-glow-pulse">
+            <div className="w-8 h-8 bg-gradient-to-r from-winmax.orange to-winmax.orange-light rounded-lg flex items-center justify-center animate-glow-pulse">
               <span className="text-white font-bold text-sm animate-wiggle">W</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-winmax-orange to-winmax-orange-light bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-winmax.orange to-winmax.orange-light bg-clip-text text-transparent">
               Winmax Gulf
             </span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="relative text-foreground hover:text-winmax-orange transition-all duration-300 group">
+            <a href="#home" className="relative text-foreground hover:text-winmax.orange transition-all duration-300 group">
               Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax.orange transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#services" className="relative text-foreground hover:text-winmax-orange transition-all duration-300 group">
+            <a href="#services" className="relative text-foreground hover:text-winmax.orange transition-all duration-300 group">
               Services
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax.orange transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#about" className="relative text-foreground hover:text-winmax-orange transition-all duration-300 group">
+            <a href="#about" className="relative text-foreground hover:text-winmax.orange transition-all duration-300 group">
               About
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax.orange transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#process" className="relative text-foreground hover:text-winmax-orange transition-all duration-300 group">
+            <a href="#process" className="relative text-foreground hover:text-winmax.orange transition-all duration-300 group">
               Process
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax.orange transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#contact" className="relative text-foreground hover:text-winmax-orange transition-all duration-300 group">
+            <a href="#contact" className="relative text-foreground hover:text-winmax.orange transition-all duration-300 group">
               Contact
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax.orange transition-all duration-300 group-hover:w-full"></span>
             </a>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block">
             <MicroInteractionButton 
-              className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:shadow-xl"
+              className="bg-gradient-to-r from-winmax.orange to-winmax.orange-light hover:shadow-xl"
               onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank')}
             >
               Get Quote
@@ -84,41 +84,41 @@ const Header = () => {
             <nav className="flex flex-col space-y-4">
               <a 
                 href="#home" 
-                className="text-foreground hover:text-winmax-orange transition-colors py-2"
+                className="text-foreground hover:text-winmax.orange transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </a>
               <a 
                 href="#services" 
-                className="text-foreground hover:text-winmax-orange transition-colors py-2"
+                className="text-foreground hover:text-winmax.orange transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </a>
               <a 
                 href="#about" 
-                className="text-foreground hover:text-winmax-orange transition-colors py-2"
+                className="text-foreground hover:text-winmax.orange transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
               <a 
                 href="#process" 
-                className="text-foreground hover:text-winmax-orange transition-colors py-2"
+                className="text-foreground hover:text-winmax.orange transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Process
               </a>
               <a 
                 href="#contact" 
-                className="text-foreground hover:text-winmax-orange transition-colors py-2"
+                className="text-foreground hover:text-winmax.orange transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </a>
               <Button 
-                className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 transition-opacity mt-4"
+                className="bg-gradient-to-r from-winmax.orange to-winmax.orange-light hover:opacity-90 transition-opacity mt-4"
                 onClick={() => {
                   window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank');
                   setIsMenuOpen(false);
