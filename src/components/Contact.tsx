@@ -1,8 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Mail, MapPin, MessageCircle, Clock, Globe } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Phone, Mail, MapPin, MessageCircle, Clock, Globe, Send } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, email, phone, service, message } = formData;
+    const whatsappMessage = `Hello! I'm ${name}. 
+Email: ${email}
+Phone: ${phone}
+Service Interest: ${service}
+Message: ${message}`;
+    
+    window.open(`https://wa.me/+971527200466?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+  };
   const contactInfo = [
     {
       icon: <Phone className="h-6 w-6" />,
@@ -42,12 +70,7 @@ const Contact = () => {
     }
   ];
 
-  const services = [
-    { name: "PDLC Smart Film", link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20PDLC%20services" },
-    { name: "LED Display Systems", link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20LED%20DISPLAY%20services" },
-    { name: "DJ Club Solutions", link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20DJSOLUTION%20services" },
-    { name: "Custom Solutions", link: "https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20custom%20solutions" }
-  ];
+  const services = ["PDLC Smart Film", "LED Display Systems", "DJ Club Solutions", "Custom Solutions"];
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-secondary/20 to-background">
@@ -113,45 +136,95 @@ const Contact = () => {
             </Card>
           </div>
 
-          {/* Right Side - Quick Actions */}
+          {/* Right Side - Contact Form */}
           <div className="animate-slide-up">
-            <h3 className="text-2xl font-bold mb-8 text-foreground">Quick Contact</h3>
+            <h3 className="text-2xl font-bold mb-8 text-foreground">Send us a Message</h3>
             
-            {/* Service Buttons */}
-            <div className="space-y-4 mb-8">
-              <h4 className="font-semibold text-lg mb-4 text-foreground">Enquire About Our Services:</h4>
-              {services.map((service, index) => (
-                <Button
-                  key={index}
-                  variant="outline"
-                  className="w-full justify-start border-winmax-orange/30 text-winmax-orange hover:bg-winmax-orange/10 transition-colors"
-                  onClick={() => window.open(service.link, '_blank')}
-                >
-                  <MessageCircle className="mr-3 h-5 w-5" />
-                  {service.name}
-                </Button>
-              ))}
-            </div>
-
-            {/* Main CTA */}
+            {/* Contact Form */}
             <Card className="bg-winmax-orange/10 border border-winmax-orange/20">
-              <CardContent className="p-8 text-center">
-                <div className="mb-6">
-                  <div className="inline-flex p-4 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-full text-primary-foreground mb-4">
-                    <MessageCircle className="h-8 w-8" />
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-foreground font-medium">Full Name *</Label>
+                      <Input
+                        id="name"
+                        type="text"
+                        placeholder="Enter your full name"
+                        value={formData.name}
+                        onChange={(e) => handleInputChange('name', e.target.value)}
+                        required
+                        className="bg-background/50 border-winmax-orange/30 focus:border-winmax-orange focus:ring-winmax-orange/20"
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-foreground font-medium">Email Address *</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="Enter your email"
+                        value={formData.email}
+                        onChange={(e) => handleInputChange('email', e.target.value)}
+                        required
+                        className="bg-background/50 border-winmax-orange/30 focus:border-winmax-orange focus:ring-winmax-orange/20"
+                      />
+                    </div>
                   </div>
-                  <h4 className="text-xl font-bold mb-2 text-foreground">Chat with Us Now</h4>
-                  <p className="text-foreground/80">
-                    Get instant responses to your questions via WhatsApp
-                  </p>
-                </div>
-                <Button 
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 transition-opacity"
-                  onClick={() => window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank')}
-                >
-                  Start WhatsApp Chat
-                </Button>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone" className="text-foreground font-medium">Phone Number *</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="+971 XXX XXX XXX"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange('phone', e.target.value)}
+                        required
+                        className="bg-background/50 border-winmax-orange/30 focus:border-winmax-orange focus:ring-winmax-orange/20"
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="service" className="text-foreground font-medium">Service Interest *</Label>
+                      <Select onValueChange={(value) => handleInputChange('service', value)} required>
+                        <SelectTrigger className="bg-background/50 border-winmax-orange/30 focus:border-winmax-orange focus:ring-winmax-orange/20">
+                          <SelectValue placeholder="Select a service" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {services.map((service, index) => (
+                            <SelectItem key={index} value={service}>
+                              {service}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message" className="text-foreground font-medium">Message *</Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Tell us about your project requirements..."
+                      value={formData.message}
+                      onChange={(e) => handleInputChange('message', e.target.value)}
+                      required
+                      rows={5}
+                      className="bg-background/50 border-winmax-orange/30 focus:border-winmax-orange focus:ring-winmax-orange/20 resize-none"
+                    />
+                  </div>
+
+                  <Button 
+                    type="submit"
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 transition-opacity font-semibold"
+                  >
+                    <Send className="mr-2 h-5 w-5" />
+                    Send Message via WhatsApp
+                  </Button>
+                </form>
               </CardContent>
             </Card>
 
