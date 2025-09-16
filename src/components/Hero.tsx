@@ -10,6 +10,7 @@ import AnimatedGradientBackground from "./AnimatedGradientBackground";
 import EnhancedScrollAnimation from "./EnhancedScrollAnimations";
 import GlassmorphismCard from "./GlassmorphismCard";
 import Interactive3DCard from "./Interactive3DCard";
+import PDLCDemo from "./PDLCDemo";
 
 const Hero = () => {
   return (
@@ -84,6 +85,11 @@ const Hero = () => {
                  Watch Demo
                </Button>
              </div>
+           </EnhancedScrollAnimation>
+
+           {/* PDLC Demo Section */}
+           <EnhancedScrollAnimation animation="fadeInUp" delay={1000}>
+             <PDLCDemo />
            </EnhancedScrollAnimation>
          </div>
       </EnhancedScrollAnimation>
