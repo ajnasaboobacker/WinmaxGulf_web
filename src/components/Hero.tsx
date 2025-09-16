@@ -35,85 +35,57 @@ const Hero = () => {
         <div className="absolute top-40 left-20 w-10 h-10 bg-winmax-orange/15 rounded-full animate-bounce hidden lg:block"></div>
       </div>
 
-      <div className="w-full px-4 lg:px-8 relative z-40">
+      <div className="w-full px-6 lg:px-12 relative z-40">
         <EnhancedScrollAnimation animation="bounceIn" delay={200}>
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto py-20 lg:py-32">
            {/* Badge */}
-           <div className="inline-flex items-center px-6 py-3 rounded-full mb-6 bg-background/60 backdrop-blur border border-winmax-orange/20">
-             <span className="text-sm font-medium text-winmax-orange">✨ Innovative Technology Solutions</span>
+           <div className="inline-flex items-center px-8 py-4 rounded-full mb-8 bg-background/70 backdrop-blur-md border border-winmax-orange/30 shadow-lg">
+             <span className="text-base font-medium text-winmax-orange">✨ Innovative Technology Solutions</span>
            </div>
 
-          {/* Enhanced Main Heading */}
+           {/* Main Heading */}
            <EnhancedScrollAnimation animation="slideInRotate" delay={400}>
-             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight">
                Transform Your Space with 
-               <span className="bg-gradient-to-r from-winmax-orange via-tech-blue to-winmax-orange-light bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]"> Smart Technology</span>
+               <span className="block bg-gradient-to-r from-winmax-orange via-tech-blue to-winmax-orange-light bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] mt-2"> Smart Technology</span>
              </h1>
            </EnhancedScrollAnimation>
 
-          {/* Enhanced Subheading */}
-          <EnhancedScrollAnimation animation="fadeInUp" delay={600}>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Leading UAE provider of PDLC smart film, LED display systems, and turnkey DJ club solutions. 
-              <span className="text-winmax-orange font-semibold"> Enhance privacy, visual communication, and create immersive experiences.</span>
-            </p>
-          </EnhancedScrollAnimation>
+           {/* Subheading */}
+           <EnhancedScrollAnimation animation="fadeInUp" delay={600}>
+             <div className="max-w-4xl">
+               <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-4 leading-relaxed font-light">
+                 Leading UAE provider of PDLC smart film, LED display systems, and turnkey DJ club solutions.
+               </p>
+               <p className="text-lg md:text-xl text-winmax-orange font-medium mb-12">
+                 Enhance privacy, visual communication, and create immersive experiences.
+               </p>
+             </div>
+           </EnhancedScrollAnimation>
 
            {/* CTA Buttons */}
            <EnhancedScrollAnimation animation="fadeInUp" delay={800}>
-             <div className="flex flex-col sm:flex-row gap-6 mb-12">
+             <div className="flex flex-col sm:flex-row gap-6 mb-16">
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 px-10 py-5 text-lg font-semibold transition-opacity"
+                  className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 px-12 py-6 text-xl font-semibold transition-all duration-300 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105"
                   onClick={() => window.open('https://wa.me/+97142713101?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank')}
                 >
                   Get Started Today
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-3 h-6 w-6" />
                 </Button>
                 
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-2 border-winmax-orange text-winmax-orange hover:bg-winmax-orange/10 backdrop-blur-sm px-10 py-5 text-lg font-semibold"
+                  className="border-2 border-winmax-orange text-winmax-orange hover:bg-winmax-orange/10 backdrop-blur-sm px-12 py-6 text-xl font-semibold rounded-full transition-all duration-300 hover:border-winmax-orange/60"
                 >
-                 <Play className="mr-2 h-5 w-5" />
+                 <Play className="mr-3 h-6 w-6" />
                  Watch Demo
                </Button>
              </div>
            </EnhancedScrollAnimation>
-
-           {/* Stats */}
-           <EnhancedScrollAnimation animation="fadeInUp" delay={1000}>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8 w-full max-w-5xl mx-auto">
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-winmax-orange/20 via-winmax-orange/10 to-background/40 backdrop-blur-sm border border-winmax-orange/30 p-8 group hover:border-winmax-orange/50 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-winmax-orange/5 to-transparent"></div>
-                  <div className="relative z-10">
-                    <div className="text-4xl md:text-5xl font-bold text-winmax-orange mb-3">500+</div>
-                    <div className="text-base font-medium text-foreground/80 mb-4">Projects Completed</div>
-                    <div className="w-full h-1 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-full opacity-70"></div>
-                  </div>
-                </div>
-                
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-tech-blue/20 via-tech-blue/10 to-background/40 backdrop-blur-sm border border-tech-blue/30 p-8 group hover:border-tech-blue/50 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-tech-blue/5 to-transparent"></div>
-                  <div className="relative z-10">
-                    <div className="text-4xl md:text-5xl font-bold text-tech-blue mb-3">15+</div>
-                    <div className="text-base font-medium text-foreground/80 mb-4">Years Experience</div>
-                    <div className="w-full h-1 bg-gradient-to-r from-tech-blue to-tech-purple rounded-full opacity-70"></div>
-                  </div>
-                </div>
-                
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-tech-purple/20 via-tech-purple/10 to-background/40 backdrop-blur-sm border border-tech-purple/30 p-8 group hover:border-tech-purple/50 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-tech-purple/5 to-transparent"></div>
-                  <div className="relative z-10">
-                    <div className="text-4xl md:text-5xl font-bold text-tech-purple mb-3">100%</div>
-                    <div className="text-base font-medium text-foreground/80 mb-4">Client Satisfaction</div>
-                    <div className="w-full h-1 bg-gradient-to-r from-tech-purple to-tech-cyan rounded-full opacity-70"></div>
-                  </div>
-                </div>
-              </div>
-           </EnhancedScrollAnimation>
-        </div>
+         </div>
       </EnhancedScrollAnimation>
       </div>
 
