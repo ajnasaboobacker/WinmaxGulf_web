@@ -1,7 +1,7 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-smart-technology.jpg";
-import ParallaxSection from "./ParallaxSection";
 import ScrollAnimation from "./ScrollAnimations";
 import { MicroInteractionButton } from "./Microinteractions";
 import ParticleBackground from "./ParticleBackground";
@@ -10,9 +10,10 @@ import AnimatedGradientBackground from "./AnimatedGradientBackground";
 import EnhancedScrollAnimation from "./EnhancedScrollAnimations";
 import GlassmorphismCard from "./GlassmorphismCard";
 import Interactive3DCard from "./Interactive3DCard";
-import PDLCDemo from "./PDLCDemo";
+import PDLCDemoModal from "./PDLCDemoModal";
 
 const Hero = () => {
+  const [showDemoModal, setShowDemoModal] = useState(false);
   return (
     <section id="home" className="relative h-screen flex items-center overflow-hidden">
       {/* Background */}
@@ -80,20 +81,22 @@ const Hero = () => {
                   variant="outline" 
                   size="lg"
                   className="border-2 border-winmax-orange text-winmax-orange hover:bg-winmax-orange/10 backdrop-blur-sm px-12 py-6 text-xl font-semibold rounded-full transition-all duration-300 hover:border-winmax-orange/60"
+                  onClick={() => setShowDemoModal(true)}
                 >
                  <Play className="mr-3 h-6 w-6" />
                  Watch Demo
                </Button>
              </div>
            </EnhancedScrollAnimation>
-
-           {/* PDLC Demo Section */}
-           <EnhancedScrollAnimation animation="fadeInUp" delay={1000}>
-             <PDLCDemo />
-           </EnhancedScrollAnimation>
          </div>
-      </EnhancedScrollAnimation>
+       </EnhancedScrollAnimation>
       </div>
+
+      {/* PDLC Demo Modal */}
+      <PDLCDemoModal 
+        isOpen={showDemoModal} 
+        onClose={() => setShowDemoModal(false)} 
+      />
 
       {/* Scroll Indicator */}
        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 animate-bounce cursor-pointer">
