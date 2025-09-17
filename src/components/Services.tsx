@@ -15,12 +15,14 @@ import AnimatedGradientBackground from "./AnimatedGradientBackground";
 import ServiceDetailModal from "./ServiceDetailModal";
 import PDLCInfoModal from "./PDLCInfoModal";
 import LEDDisplayModal from "./LEDDisplayModal";
+import DJClubModal from "./DJClubModal";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPDLCInfoOpen, setIsPDLCInfoOpen] = useState(false);
   const [isLEDDisplayOpen, setIsLEDDisplayOpen] = useState(false);
+  const [isDJClubOpen, setIsDJClubOpen] = useState(false);
 
   const services = [
     {
@@ -177,13 +179,15 @@ const Services = () => {
                 <div className="relative z-10">
                   <h3 
                     className={`text-xl font-bold mb-3 group-hover:text-winmax-orange transition-colors duration-300 ${
-                      service.title === "PDLC Smart Film" || service.title === "LED Display Systems" ? "cursor-pointer hover:underline" : ""
+                      service.title === "PDLC Smart Film" || service.title === "LED Display Systems" || service.title === "DJ Club Solutions" ? "cursor-pointer hover:underline" : ""
                     }`}
                     onClick={() => {
                       if (service.title === "PDLC Smart Film") {
                         setIsPDLCInfoOpen(true);
                       } else if (service.title === "LED Display Systems") {
                         setIsLEDDisplayOpen(true);
+                      } else if (service.title === "DJ Club Solutions") {
+                        setIsDJClubOpen(true);
                       }
                     }}
                   >
@@ -272,6 +276,12 @@ const Services = () => {
       <LEDDisplayModal
         isOpen={isLEDDisplayOpen}
         onClose={() => setIsLEDDisplayOpen(false)}
+      />
+
+      {/* DJ Club Modal */}
+      <DJClubModal
+        isOpen={isDJClubOpen}
+        onClose={() => setIsDJClubOpen(false)}
       />
     </section>
   );
