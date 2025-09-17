@@ -187,7 +187,7 @@ const Services = () => {
                       if (service.title === "PDLC Smart Film") {
                         navigate('/pdlc');
                       } else if (service.title === "LED Display Systems") {
-                        setIsLEDDisplayOpen(true);
+                        navigate('/led-display');
                       } else if (service.title === "DJ Club Solutions") {
                         setIsDJClubOpen(true);
                       }
