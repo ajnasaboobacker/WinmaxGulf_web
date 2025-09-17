@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-smart-technology.jpg";
+import ledImage from "@/assets/led-display.jpg";
+import djImage from "@/assets/dj-club.jpg";
 import ScrollAnimation from "./ScrollAnimations";
 import { MicroInteractionButton } from "./Microinteractions";
 import ParticleBackground from "./ParticleBackground";
@@ -14,16 +16,61 @@ import PDLCDemoModal from "./PDLCDemoModal";
 
 const Hero = () => {
   const [showDemoModal, setShowDemoModal] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const heroImages = [
+    { src: heroImage, alt: "PDLC Smart Film Technology", title: "PDLC Smart Film" },
+    { src: ledImage, alt: "LED Display Systems", title: "LED Display Systems" },
+    { src: djImage, alt: "DJ Club Solutions", title: "DJ Club Solutions" }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
   return (
     <section id="home" className="relative h-screen flex items-center overflow-hidden">
-      {/* Background */}
+      {/* Rotating Background Banner */}
       <div className="absolute inset-0 z-10">
-        <img 
-          src={heroImage}
-          alt="Smart technology and LED display solutions"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/85 to-background/30"></div>
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img 
+              src={image.src}
+              alt={image.alt}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/85 to-background/30"></div>
+            {/* Technology Title Overlay */}
+            <div className="absolute top-8 right-8 z-10">
+              <div className="bg-background/80 backdrop-blur-md px-4 py-2 rounded-full border border-winmax-orange/30">
+                <span className="text-sm font-medium text-winmax-orange">{image.title}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+        
+        {/* Banner Indicators */}
+        <div className="absolute bottom-20 right-8 z-10 flex space-x-2">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-winmax-orange scale-110' 
+                  : 'bg-white/50 hover:bg-white/70'
+              }`}
+              onClick={() => setCurrentImageIndex(index)}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Subtle Particle Background */}
