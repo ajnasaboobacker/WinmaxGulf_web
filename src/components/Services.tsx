@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Eye, Monitor, Music, Info } from "lucide-react";
@@ -18,6 +19,7 @@ import LEDDisplayModal from "./LEDDisplayModal";
 import DJClubModal from "./DJClubModal";
 
 const Services = () => {
+  const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPDLCInfoOpen, setIsPDLCInfoOpen] = useState(false);
@@ -183,7 +185,7 @@ const Services = () => {
                     }`}
                     onClick={() => {
                       if (service.title === "PDLC Smart Film") {
-                        setIsPDLCInfoOpen(true);
+                        navigate('/pdlc');
                       } else if (service.title === "LED Display Systems") {
                         setIsLEDDisplayOpen(true);
                       } else if (service.title === "DJ Club Solutions") {
