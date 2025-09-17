@@ -35,20 +35,16 @@ Message: ${message}`;
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone Numbers",
-      value: "+971 527 200 466",
-      link: "tel:+971527200466"
-    },
-    {
-      icon: <Phone className="h-6 w-6" />,
-      title: "Phone",
-      value: "+971 504 171 875",
-      link: "tel:+971504171875"
-    },
-    {
-      icon: <Phone className="h-6 w-6" />,
-      title: "Office",
-      value: "+971 4 271 3101",
-      link: "tel:+97142713101"
+      value: [
+        "+971 527 200 466",
+        "+971 504 171 875", 
+        "+971 4 271 3101"
+      ],
+      links: [
+        "tel:+971527200466",
+        "tel:+971504171875",
+        "tel:+97142713101"
+      ]
     },
     {
       icon: <MessageCircle className="h-6 w-6" />,
@@ -98,19 +94,42 @@ Message: ${message}`;
               {contactInfo.map((info, index) => (
                 <Card 
                   key={index} 
-                  className="group hover:scale-105 transition-all duration-300 bg-gradient-to-br from-card to-secondary/10 border-border/50 hover:border-winmax-orange/50 cursor-pointer"
-                  onClick={() => info.link !== "#" && window.open(info.link, '_blank')}
+                  className="group hover:scale-105 transition-all duration-300 bg-gradient-to-br from-card to-secondary/10 border-border/50 hover:border-winmax-orange/50"
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
                       <div className="p-3 bg-gradient-to-r from-winmax-orange to-winmax-orange-light rounded-lg text-primary-foreground">
                         {info.icon}
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-lg group-hover:text-winmax-orange transition-colors text-foreground">
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-lg group-hover:text-winmax-orange transition-colors text-foreground mb-2">
                           {info.title}
                         </h4>
-                        <p className="text-foreground/80">{info.value}</p>
+                        {Array.isArray(info.value) ? (
+                          <div className="space-y-1">
+                            {info.value.map((phone, phoneIndex) => (
+                              <a
+                                key={phoneIndex}
+                                href={info.links[phoneIndex]}
+                                className="block text-foreground/80 hover:text-winmax-orange transition-colors cursor-pointer"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                {phone}
+                              </a>
+                            ))}
+                          </div>
+                        ) : (
+                          <a
+                            href={info.link}
+                            className="text-foreground/80 hover:text-winmax-orange transition-colors cursor-pointer"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (info.link !== "#") window.open(info.link, '_blank');
+                            }}
+                          >
+                            {info.value}
+                          </a>
+                        )}
                       </div>
                     </div>
                   </CardContent>
