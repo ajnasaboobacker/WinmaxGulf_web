@@ -4,6 +4,7 @@ import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-smart-technology.jpg";
 import ledImage from "@/assets/led-display.jpg";
 import djImage from "@/assets/dj-club.jpg";
+import { LazyImage } from "@/components/LazyImage";
 import ScrollAnimation from "./ScrollAnimations";
 import { MicroInteractionButton } from "./Microinteractions";
 import ParticleBackground from "./ParticleBackground";
@@ -42,10 +43,11 @@ const Hero = () => {
               index === currentImageIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img 
+            <LazyImage 
               src={image.src}
               alt={image.alt}
               className="w-full h-full object-cover"
+              skeletonClassName="h-full"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background/85 to-background/30"></div>
             {/* Technology Title Overlay */}

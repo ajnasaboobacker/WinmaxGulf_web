@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
 import { X } from "lucide-react";
+import { LazyImage } from "@/components/LazyImage";
+import { GallerySkeleton } from "@/components/LoadingStates";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -59,10 +61,11 @@ const Gallery = () => {
                 onClick={() => setSelectedImage(image.src)}
               >
                 <div className="relative h-64 overflow-hidden">
-                  <img 
+                  <LazyImage 
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    skeletonClassName="h-64"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
