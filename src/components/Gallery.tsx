@@ -12,7 +12,7 @@ const Gallery = () => {
       category: "LED Displays"
     },
     {
-      src: "https://winmaxgulf.com/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-08-02-at-8.30.32-PM-r9p4a30zodky7n5yrq7daxmal6ybnoxh2gcnrcwqrs.jpeg",
+      src: "https://winmaxgulf.com/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-08-02-at-8.31.16-PM-r9p49xdyjdc3cspl0ieotrdi96tptqcpupg2ts35q0.jpeg",
       alt: "Indoor LED Installation",
       category: "LED Displays"
     },
@@ -22,7 +22,7 @@ const Gallery = () => {
       category: "Interactive Installations"
     },
     {
-      src: "https://winmaxgulf.com/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-08-02-at-8.31.16-PM-r9p49xdyjdc3cspl0ieotrdi96tptqcpupg2ts35q0.jpeg",
+      src: "https://winmaxgulf.com/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-08-02-at-8.30.32-PM-r9p4a30zodky7n5yrq7daxmal6ybnoxh2gcnrcwqrs.jpeg",
       alt: "Smart Technology Installation",
       category: "PDLC Smart Film"
     },
