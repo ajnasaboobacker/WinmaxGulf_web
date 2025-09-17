@@ -14,11 +14,13 @@ import Interactive3DCard from "./Interactive3DCard";
 import AnimatedGradientBackground from "./AnimatedGradientBackground";
 import ServiceDetailModal from "./ServiceDetailModal";
 import PDLCInfoModal from "./PDLCInfoModal";
+import LEDDisplayModal from "./LEDDisplayModal";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPDLCInfoOpen, setIsPDLCInfoOpen] = useState(false);
+  const [isLEDDisplayOpen, setIsLEDDisplayOpen] = useState(false);
 
   const services = [
     {
@@ -175,11 +177,13 @@ const Services = () => {
                 <div className="relative z-10">
                   <h3 
                     className={`text-xl font-bold mb-3 group-hover:text-winmax-orange transition-colors duration-300 ${
-                      service.title === "PDLC Smart Film" ? "cursor-pointer hover:underline" : ""
+                      service.title === "PDLC Smart Film" || service.title === "LED Display Systems" ? "cursor-pointer hover:underline" : ""
                     }`}
                     onClick={() => {
                       if (service.title === "PDLC Smart Film") {
                         setIsPDLCInfoOpen(true);
+                      } else if (service.title === "LED Display Systems") {
+                        setIsLEDDisplayOpen(true);
                       }
                     }}
                   >
@@ -262,6 +266,12 @@ const Services = () => {
       <PDLCInfoModal
         isOpen={isPDLCInfoOpen}
         onClose={() => setIsPDLCInfoOpen(false)}
+      />
+
+      {/* LED Display Modal */}
+      <LEDDisplayModal
+        isOpen={isLEDDisplayOpen}
+        onClose={() => setIsLEDDisplayOpen(false)}
       />
     </section>
   );
