@@ -49,7 +49,7 @@ const Hero = () => {
            <EnhancedScrollAnimation animation="slideInRotate" delay={400}>
              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-12 leading-[1.2] tracking-tight pb-4">
                Transform Your Space with 
-               <span className="block bg-gradient-to-r from-winmax-orange via-tech-blue to-winmax-orange-light bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] mt-4 pb-2"> Smart Technology</span>
+               <span className="block bg-gradient-to-r from-winmax-orange via-tech-blue to-winmax-orange-light bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] mt-4 pb-2">Smart Technology</span>
              </h1>
            </EnhancedScrollAnimation>
 
