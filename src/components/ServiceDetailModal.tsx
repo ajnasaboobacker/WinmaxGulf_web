@@ -89,7 +89,13 @@ const ServiceDetailModal = ({ isOpen, onClose, service }: ServiceDetailModalProp
             <MicroInteractionButton 
               className="w-full py-4 px-6 bg-gradient-to-r from-winmax-orange to-winmax-orange-light shadow-glow hover:shadow-neon transition-all duration-500 font-semibold text-base tracking-wide rounded-lg flex items-center justify-center"
               onClick={() => {
-                window.open(service.link, '_blank');
+                const link = document.createElement('a');
+                link.href = service.link;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
                 onClose();
               }}
             >

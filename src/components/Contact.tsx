@@ -29,7 +29,13 @@ Phone: ${phone}
 Service Interest: ${service}
 Message: ${message}`;
     
-    window.open(`https://wa.me/+971527200466?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+    const link = document.createElement('a');
+    link.href = `https://wa.me/+971527200466?text=${encodeURIComponent(whatsappMessage)}`;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
   const contactInfo = [
     {
@@ -270,7 +276,15 @@ Message: ${message}`;
             <Button 
               size="lg"
               className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light hover:opacity-90 transition-opacity"
-              onClick={() => window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20schedule%20a%20free%20consultation', '_blank')}
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = 'https://wa.me/+971527200466?text=Hello%20I%20want%20to%20schedule%20a%20free%20consultation';
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
             >
               Get Free Consultation
             </Button>
