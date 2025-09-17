@@ -28,7 +28,7 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-secondary/20 to-background">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Content */}
           <div className="animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-winmax-orange/20 border border-winmax-orange/30 mb-6">
@@ -45,7 +45,7 @@ const About = () => {
             </p>
 
             {/* Vision & Mission */}
-            <div className="space-y-6 mb-8">
+            <div className="space-y-6">
               <div className="p-6 rounded-lg bg-winmax-orange/10 border border-winmax-orange/20">
                 <h3 className="font-bold text-lg mb-2 text-winmax-orange">Our Vision</h3>
                 <p className="text-foreground/80">
@@ -63,8 +63,8 @@ const About = () => {
           </div>
 
           {/* Right Content - Features */}
-          <div className="animate-slide-up">
-            <div className="grid gap-6">
+          <div className="animate-slide-up h-full flex flex-col">
+            <div className="grid gap-6 flex-1">
               {features.map((feature, index) => (
                 <Card 
                   key={index} 
@@ -91,7 +91,7 @@ const About = () => {
             </div>
 
             {/* Stats */}
-            <div className="mt-12 p-8 rounded-lg bg-winmax-orange/10 border border-winmax-orange/20">
+            <div className="mt-8 p-8 rounded-lg bg-winmax-orange/10 border border-winmax-orange/20">
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-winmax-orange mb-2">500+</div>
