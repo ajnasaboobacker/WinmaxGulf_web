@@ -101,7 +101,15 @@ const Header = () => {
             <Button 
               size="lg"
               className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light text-white font-semibold px-8 py-3 text-base hover:scale-105 hover:shadow-xl hover:shadow-winmax-orange/40 transition-all duration-300 border-0 rounded-lg group"
-              onClick={() => window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank')}
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = 'https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20services';
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
             >
               Get Quote
               <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300 text-lg">→</span>
@@ -210,7 +218,13 @@ const Header = () => {
                 size="lg"
                 className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light text-white font-semibold px-6 py-3 text-base hover:opacity-90 transition-all duration-300 mt-4 w-full rounded-lg"
                 onClick={() => {
-                  window.open('https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20services', '_blank');
+                  const link = document.createElement('a');
+                  link.href = 'https://wa.me/+971527200466?text=Hello%20I%20want%20to%20know%20about%20your%20services';
+                  link.target = '_blank';
+                  link.rel = 'noopener noreferrer';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
                   setIsMenuOpen(false);
                 }}
               >
