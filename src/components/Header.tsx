@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import AnimatedIcon from "./AnimatedIcon";
 import { MicroInteractionButton } from "./Microinteractions";
 import winmaxLogo from "@/assets/winmax-logo.png";
@@ -8,6 +9,8 @@ import winmaxLogo from "@/assets/winmax-logo.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -36,26 +39,61 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
-              Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#services" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
-              Services
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#about" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
-              About
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#process" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
-              Process
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#contact" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
-              Contact
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            {isHomePage ? (
+              <a href="#home" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
+                Home
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ) : (
+              <Link to="/" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
+                Home
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            )}
+            {isHomePage ? (
+              <a href="#services" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
+                Services
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ) : (
+              <Link to="/#services" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
+                Services
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            )}
+            {isHomePage ? (
+              <a href="#about" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
+                About
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ) : (
+              <Link to="/#about" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
+                About
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            )}
+            {isHomePage ? (
+              <a href="#process" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
+                Process
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ) : (
+              <Link to="/#process" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
+                Process
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            )}
+            {isHomePage ? (
+              <a href="#contact" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
+                Contact
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ) : (
+              <Link to="/#contact" className="relative text-white/90 hover:text-winmax-orange transition-all duration-300 group">
+                Contact
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-winmax-orange transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            )}
           </nav>
 
           {/* CTA Button */}
@@ -83,41 +121,91 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-winmax-orange/30 animate-fade-in bg-gradient-to-r from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-lg">
             <nav className="flex flex-col space-y-4">
-              <a 
-                href="#home" 
-                className="text-white/90 hover:text-winmax-orange transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </a>
-              <a 
-                href="#services" 
-                className="text-white/90 hover:text-winmax-orange transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
-              </a>
-              <a 
-                href="#about" 
-                className="text-white/90 hover:text-winmax-orange transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </a>
-              <a 
-                href="#process" 
-                className="text-white/90 hover:text-winmax-orange transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Process
-              </a>
-              <a 
-                href="#contact" 
-                className="text-white/90 hover:text-winmax-orange transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </a>
+              {isHomePage ? (
+                <a 
+                  href="#home" 
+                  className="text-white/90 hover:text-winmax-orange transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </a>
+              ) : (
+                <Link 
+                  to="/" 
+                  className="text-white/90 hover:text-winmax-orange transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </Link>
+              )}
+              {isHomePage ? (
+                <a 
+                  href="#services" 
+                  className="text-white/90 hover:text-winmax-orange transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Services
+                </a>
+              ) : (
+                <Link 
+                  to="/#services" 
+                  className="text-white/90 hover:text-winmax-orange transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Services
+                </Link>
+              )}
+              {isHomePage ? (
+                <a 
+                  href="#about" 
+                  className="text-white/90 hover:text-winmax-orange transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </a>
+              ) : (
+                <Link 
+                  to="/#about" 
+                  className="text-white/90 hover:text-winmax-orange transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </Link>
+              )}
+              {isHomePage ? (
+                <a 
+                  href="#process" 
+                  className="text-white/90 hover:text-winmax-orange transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Process
+                </a>
+              ) : (
+                <Link 
+                  to="/#process" 
+                  className="text-white/90 hover:text-winmax-orange transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Process
+                </Link>
+              )}
+              {isHomePage ? (
+                <a 
+                  href="#contact" 
+                  className="text-white/90 hover:text-winmax-orange transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </a>
+              ) : (
+                <Link 
+                  to="/#contact" 
+                  className="text-white/90 hover:text-winmax-orange transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              )}
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-winmax-orange to-winmax-orange-light text-white font-semibold px-6 py-3 text-base hover:opacity-90 transition-all duration-300 mt-4 w-full rounded-lg"
