@@ -13,10 +13,12 @@ import GlassmorphismCard from "./GlassmorphismCard";
 import Interactive3DCard from "./Interactive3DCard";
 import AnimatedGradientBackground from "./AnimatedGradientBackground";
 import ServiceDetailModal from "./ServiceDetailModal";
+import PDLCInfoModal from "./PDLCInfoModal";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPDLCInfoOpen, setIsPDLCInfoOpen] = useState(false);
 
   const services = [
     {
@@ -171,7 +173,16 @@ const Services = () => {
               <CardContent className="p-6 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-winmax-orange/5 to-winmax-orange/2 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-winmax-orange transition-colors duration-300">
+                  <h3 
+                    className={`text-xl font-bold mb-3 group-hover:text-winmax-orange transition-colors duration-300 ${
+                      service.title === "PDLC Smart Film" ? "cursor-pointer hover:underline" : ""
+                    }`}
+                    onClick={() => {
+                      if (service.title === "PDLC Smart Film") {
+                        setIsPDLCInfoOpen(true);
+                      }
+                    }}
+                  >
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -246,6 +257,12 @@ const Services = () => {
           service={selectedService}
         />
       )}
+
+      {/* PDLC Info Modal */}
+      <PDLCInfoModal
+        isOpen={isPDLCInfoOpen}
+        onClose={() => setIsPDLCInfoOpen(false)}
+      />
     </section>
   );
 };
