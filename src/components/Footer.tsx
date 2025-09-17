@@ -111,6 +111,7 @@ const Footer = () => {
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-winmax-orange" />
                 <span className="text-foreground/80">info@winmaxgulf.com</span>
+                <span className="text-foreground/80">marimuthu@winmaxgulf.com</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Globe className="h-4 w-4 text-winmax-orange" />
