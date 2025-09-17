@@ -156,7 +156,7 @@ const Services = () => {
                 <GlassmorphismCard 
                   intensity="medium" 
                   glow 
-                  className="overflow-hidden group hover:scale-105 transition-all duration-700"
+                  className="overflow-hidden group hover:scale-105 transition-all duration-700 h-full min-h-[600px] flex flex-col"
                 >
               <div className="relative h-48 overflow-hidden">
                 <img 
@@ -176,7 +176,7 @@ const Services = () => {
                 </div>
               </div>
               
-              <CardContent className="p-6 relative">
+              <CardContent className="p-6 relative flex-grow flex flex-col justify-between">
                 <div className="absolute inset-0 bg-gradient-to-br from-winmax-orange/5 to-winmax-orange/2 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
                   <h3 
