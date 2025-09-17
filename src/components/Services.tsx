@@ -189,7 +189,7 @@ const Services = () => {
                       } else if (service.title === "LED Display Systems") {
                         navigate('/led-display');
                       } else if (service.title === "DJ Club Solutions") {
-                        setIsDJClubOpen(true);
+                        navigate('/dj-club-solutions');
                       }
                     }}
                   >

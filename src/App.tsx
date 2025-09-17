@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import PDLC from "./pages/PDLC";
 import LEDDisplay from "./pages/LEDDisplay";
+import DJClubSolutions from "./pages/DJClubSolutions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/pdlc" element={<PDLC />} />
           <Route path="/led-display" element={<LEDDisplay />} />
+          <Route path="/dj-club-solutions" element={<DJClubSolutions />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
