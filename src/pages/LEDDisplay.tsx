@@ -133,12 +133,12 @@ const LEDDisplay = () => {
           style={{ backgroundImage: `url(${ledBanner})` }}
         />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
-          <EnhancedScrollAnimation animation="bounceIn">
-            <Badge variant="outline" className="mb-6 px-6 py-2 border-winmax-orange text-winmax-orange">
-              LED Display Technology
-            </Badge>
-          </EnhancedScrollAnimation>
+          <div className="container mx-auto px-6 lg:px-8 relative z-10 text-center">
+            <EnhancedScrollAnimation animation="bounceIn">
+              <Badge variant="outline" className="mb-6 px-6 py-2 border-winmax-orange text-winmax-orange">
+                LED Display Technology
+              </Badge>
+            </EnhancedScrollAnimation>
           
           <EnhancedScrollAnimation animation="slideInRotate" delay={200}>
             <h1 className="text-4xl md:text-7xl font-bold mb-6">
@@ -184,7 +184,7 @@ const LEDDisplay = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Why Choose 
@@ -227,7 +227,7 @@ const LEDDisplay = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Types of 
@@ -284,7 +284,7 @@ const LEDDisplay = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Product 
@@ -319,7 +319,7 @@ const LEDDisplay = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <EnhancedScrollAnimation animation="fadeInLeft">
               <div>
@@ -371,7 +371,7 @@ const LEDDisplay = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="zoomIn">
             <div className="text-center">
               <GlassmorphismCard intensity="medium" className="inline-block p-12 mx-auto">

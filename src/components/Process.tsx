@@ -25,7 +25,7 @@ const Process = () => {
 
   return (
     <section id="process" className="py-20 bg-gradient-to-b from-background to-secondary/20">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-winmax-orange/20 border border-winmax-orange/30 mb-6">

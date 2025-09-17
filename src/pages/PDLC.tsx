@@ -99,12 +99,12 @@ const PDLC = () => {
           style={{ backgroundImage: `url(${heroImage})` }}
         />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
-          <EnhancedScrollAnimation animation="bounceIn">
-            <Badge variant="outline" className="mb-6 px-6 py-2 border-winmax-orange text-winmax-orange">
-              PDLC Smart Technology
-            </Badge>
-          </EnhancedScrollAnimation>
+          <div className="container mx-auto px-6 lg:px-8 relative z-10 text-center">
+            <EnhancedScrollAnimation animation="bounceIn">
+              <Badge variant="outline" className="mb-6 px-6 py-2 border-winmax-orange text-winmax-orange">
+                PDLC Smart Technology
+              </Badge>
+            </EnhancedScrollAnimation>
           
           <EnhancedScrollAnimation animation="slideInRotate" delay={200}>
             <h1 className="text-4xl md:text-7xl font-bold mb-6">
@@ -149,7 +149,7 @@ const PDLC = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Perfect Privacy 
@@ -232,7 +232,7 @@ const PDLC = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Control Your Smart Film in 
@@ -268,7 +268,7 @@ const PDLC = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Perfect for 
@@ -297,7 +297,7 @@ const PDLC = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Benefits of 
@@ -331,7 +331,7 @@ const PDLC = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Why Choose Us for 

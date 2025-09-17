@@ -44,7 +44,7 @@ const TechnologyShowcase = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-background via-secondary/10 to-background">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-winmax-orange/20 text-winmax-orange border-winmax-orange/30">

@@ -92,7 +92,7 @@ const DJClubSolutions = () => {
           style={{ backgroundImage: `url(${djBanner})` }}
         />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+        <div className="container mx-auto px-6 lg:px-8 relative z-10 text-center">
           <EnhancedScrollAnimation animation="bounceIn">
             <Badge variant="outline" className="mb-6 px-6 py-2 border-winmax-orange text-winmax-orange">
               Entertainment Solutions
@@ -143,7 +143,7 @@ const DJClubSolutions = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <EnhancedScrollAnimation animation="fadeInLeft">
               <div>
@@ -190,7 +190,7 @@ const DJClubSolutions = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Our 
@@ -238,7 +238,7 @@ const DJClubSolutions = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Perfect for 
@@ -270,7 +270,7 @@ const DJClubSolutions = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Our 
@@ -326,7 +326,7 @@ const DJClubSolutions = () => {
       <section className="py-20 relative overflow-hidden">
         <AnimatedGradientBackground variant="section" className="z-0" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <EnhancedScrollAnimation animation="zoomIn">
             <div className="text-center">
               <GlassmorphismCard intensity="medium" className="inline-block p-12 mx-auto">

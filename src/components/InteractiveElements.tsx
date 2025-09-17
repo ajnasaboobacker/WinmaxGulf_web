@@ -55,7 +55,7 @@ const InteractiveElements = () => {
         <div className="absolute bottom-20 right-20 w-40 h-40 bg-tech-blue rounded-full blur-3xl animate-pulse [animation-delay:1s]"></div>
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         {/* Interactive Features Showcase */}
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-gradient-to-r from-winmax-orange/20 to-winmax-orange-light/20 text-winmax-orange border-winmax-orange/30">

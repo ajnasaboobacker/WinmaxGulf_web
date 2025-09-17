@@ -27,7 +27,7 @@ const About = () => {
 
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-secondary/20 to-background">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="animate-fade-in">

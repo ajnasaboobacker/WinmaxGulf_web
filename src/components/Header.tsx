@@ -26,7 +26,7 @@ const Header = () => {
         : 'bg-gradient-to-r from-gray-900/90 via-gray-800/90 to-gray-900/90 backdrop-blur-sm border-b border-winmax-orange/20 py-4'
       }
     `}>
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">

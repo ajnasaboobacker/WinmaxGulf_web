@@ -122,7 +122,7 @@ const Services = () => {
       {/* Animated Background */}
       <AnimatedGradientBackground variant="section" className="z-0" />
       
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         {/* Enhanced Section Header */}
         <EnhancedScrollAnimation animation="bounceIn" className="text-center mb-16">
           <GlassmorphismCard intensity="medium" glow className="inline-flex items-center px-6 py-3 rounded-full mb-6">

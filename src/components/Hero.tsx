@@ -84,9 +84,9 @@ const Hero = () => {
         <div className="absolute top-40 left-20 w-10 h-10 bg-winmax-orange/15 rounded-full animate-bounce hidden lg:block"></div>
       </div>
 
-      <div className="w-full px-6 lg:px-12 relative z-40">
-        <EnhancedScrollAnimation animation="bounceIn" delay={200}>
-          <div className="max-w-7xl mx-auto py-20 lg:py-32 overflow-visible">
+        <div className="container mx-auto px-6 lg:px-8 relative z-40">
+          <EnhancedScrollAnimation animation="bounceIn" delay={200}>
+            <div className="max-w-7xl mx-auto py-20 lg:py-32 overflow-visible">
            {/* Badge */}
            <div className="inline-flex items-center px-8 py-4 rounded-full mb-8 bg-background/70 backdrop-blur-md border border-winmax-orange/30 shadow-lg">
              <span className="text-base font-medium text-winmax-orange">✨ Innovative Technology Solutions</span>
