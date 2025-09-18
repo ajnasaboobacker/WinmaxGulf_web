@@ -10,9 +10,6 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CharacterAnimations from "@/components/CharacterAnimations";
-import FloatingChatWidget from "@/components/FloatingChatWidget";
-import ScrollProgressIndicator from "@/components/ScrollProgressIndicator";
-import SectionNavigation from "@/components/SectionNavigation";
 import SEOHead from "@/components/SEOHead";
 import TrustBadges from "@/components/TrustBadges";
 import EnhancedTestimonials from "@/components/EnhancedTestimonials";
@@ -22,8 +19,6 @@ const Index = () => {
     <>
       <SEOHead />
       <div className="min-h-screen bg-background">
-      <ScrollProgressIndicator />
-      <SectionNavigation />
       <Header />
       <Hero />
       <InteractiveElements />
@@ -37,7 +32,6 @@ const Index = () => {
       <Contact />
       <Footer />
       <CharacterAnimations />
-      <FloatingChatWidget />
       </div>
     </>
   );
