@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import AnimatedIcon from "./AnimatedIcon";
 import { MicroInteractionButton } from "./Microinteractions";
-import winmaxLogo from "@/assets/winmax-logo.png";
+import winmaxLogo from "@/assets/winmax-logo-white.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
