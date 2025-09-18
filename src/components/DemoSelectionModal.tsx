@@ -89,18 +89,18 @@ const DemoSelectionModal = ({ isOpen, onClose }: DemoSelectionModalProps) => {
                     </div>
                     
                     {/* Content */}
-                    <div className="p-6 text-center space-y-3 flex-1 flex flex-col justify-between">
-                      <div>
-                        <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-winmax-orange transition-colors">
+                    <div className="p-4 text-center space-y-3 flex-1 flex flex-col justify-between min-h-[120px]">
+                      <div className="space-y-2">
+                        <h3 className="font-bold text-base leading-tight text-foreground group-hover:text-winmax-orange transition-colors">
                           {option.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
                           {option.description}
                         </p>
                       </div>
-                      <div className="flex items-center justify-center gap-2 text-winmax-orange font-medium">
-                        <Play className="h-4 w-4" />
-                        <span className="text-sm">Watch Demo</span>
+                      <div className="flex items-center justify-center gap-2 text-winmax-orange font-medium mt-auto">
+                        <Play className="h-3 w-3" />
+                        <span className="text-xs font-semibold">Watch Demo</span>
                       </div>
                     </div>
                   </Button>
