@@ -13,7 +13,7 @@ import AnimatedGradientBackground from "./AnimatedGradientBackground";
 import EnhancedScrollAnimation from "./EnhancedScrollAnimations";
 import GlassmorphismCard from "./GlassmorphismCard";
 import Interactive3DCard from "./Interactive3DCard";
-import PDLCDemoModal from "./PDLCDemoModal";
+import DemoSelectionModal from "./DemoSelectionModal";
 
 const Hero = () => {
   const [showDemoModal, setShowDemoModal] = useState(false);
@@ -141,8 +141,8 @@ const Hero = () => {
        </EnhancedScrollAnimation>
       </div>
 
-      {/* PDLC Demo Modal */}
-      <PDLCDemoModal 
+      {/* Demo Selection Modal */}
+      <DemoSelectionModal 
         isOpen={showDemoModal} 
         onClose={() => setShowDemoModal(false)} 
       />
