@@ -27,13 +27,13 @@ const Header = () => {
       }
     `}>
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
             <img 
               src={winmaxLogo}
               alt="Winmax Gulf Logo"
-              className="h-14 md:h-20 lg:h-24 w-auto filter drop-shadow-[0_0_10px_rgba(255,165,0,0.8)] hover:drop-shadow-[0_0_15px_rgba(255,165,0,1)] transition-all duration-300"
+              className="h-12 md:h-13 w-auto filter drop-shadow-[0_0_10px_rgba(255,165,0,0.8)] hover:drop-shadow-[0_0_15px_rgba(255,165,0,1)] transition-all duration-300"
             />
           </div>
 
