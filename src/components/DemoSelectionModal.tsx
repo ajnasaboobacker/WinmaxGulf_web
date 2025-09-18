@@ -5,6 +5,9 @@ import { Play, Film, Zap, Music } from "lucide-react";
 import PDLCDemoModal from "./PDLCDemoModal";
 import LEDDisplayDemoModal from "./LEDDisplayDemoModal";
 import DJClubDemoModal from "./DJClubDemoModal";
+import pdlcImage from "@/assets/hero-smart-glass.jpg";
+import ledImage from "@/assets/led-display.jpg";
+import djImage from "@/assets/dj-club.jpg";
 
 interface DemoSelectionModalProps {
   isOpen: boolean;
@@ -29,6 +32,7 @@ const DemoSelectionModal = ({ isOpen, onClose }: DemoSelectionModalProps) => {
       title: "PDLC Smart Film Demo",
       description: "See our privacy glass technology in action",
       icon: Film,
+      image: pdlcImage,
       gradient: "from-blue-500 to-purple-600"
     },
     {
@@ -36,6 +40,7 @@ const DemoSelectionModal = ({ isOpen, onClose }: DemoSelectionModalProps) => {
       title: "LED Display Systems",
       description: "High-resolution LED displays for any space",
       icon: Zap,
+      image: ledImage,
       gradient: "from-orange-500 to-red-600"
     },
     {
@@ -43,6 +48,7 @@ const DemoSelectionModal = ({ isOpen, onClose }: DemoSelectionModalProps) => {
       title: "TurnKey DJ Solutions",
       description: "Complete club and entertainment systems",
       icon: Music,
+      image: djImage,
       gradient: "from-green-500 to-blue-600"
     }
   ];
@@ -59,24 +65,44 @@ const DemoSelectionModal = ({ isOpen, onClose }: DemoSelectionModalProps) => {
           </DialogHeader>
           
           <div className="p-6 pt-0">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {demoOptions.map((option) => {
                 const IconComponent = option.icon;
                 return (
                   <Button
                     key={option.id}
                     variant="outline"
-                    className="h-auto p-6 flex flex-col items-center space-y-4 hover:scale-105 transition-all duration-300 border-2 hover:border-winmax-orange"
+                    className="h-auto p-0 flex flex-col overflow-hidden hover:scale-105 transition-all duration-300 border-2 hover:border-winmax-orange group bg-transparent"
                     onClick={() => handleDemoSelect(option.id)}
                   >
-                    <div className={`p-4 rounded-full bg-gradient-to-r ${option.gradient} text-white`}>
-                      <IconComponent size={32} />
+                    {/* Image Header */}
+                    <div className="relative w-full h-40 overflow-hidden">
+                      <img 
+                        src={option.image} 
+                        alt={option.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
+                      <div className={`absolute top-4 right-4 p-3 rounded-full bg-gradient-to-r ${option.gradient} text-white shadow-lg`}>
+                        <IconComponent size={24} />
+                      </div>
                     </div>
-                    <div className="text-center">
-                      <h3 className="font-semibold text-lg mb-2">{option.title}</h3>
-                      <p className="text-sm text-muted-foreground">{option.description}</p>
+                    
+                    {/* Content */}
+                    <div className="p-6 text-center space-y-3 flex-1 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-winmax-orange transition-colors">
+                          {option.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {option.description}
+                        </p>
+                      </div>
+                      <div className="flex items-center justify-center gap-2 text-winmax-orange font-medium">
+                        <Play className="h-4 w-4" />
+                        <span className="text-sm">Watch Demo</span>
+                      </div>
                     </div>
-                    <Play className="h-5 w-5 text-winmax-orange" />
                   </Button>
                 );
               })}
